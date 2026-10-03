@@ -830,5 +830,20 @@
   });
   menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
 </script>
+<script data-goatcounter="https://mohamedayman.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script>
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a');
+    if (!a || !window.goatcounter || !window.goatcounter.count) return;
+    const href = a.getAttribute('href') || '';
+    let name = '';
+    if (href.includes('mailto:')) name = 'click-email';
+    else if (href.includes('Flutter_Developer_CV')) name = 'click-cv';
+    else if (href.includes('linkedin.com')) name = 'click-linkedin';
+    else if (href.includes('apps.apple.com') || href.includes('play.google.com')) name = 'click-store';
+    if (!name) return;
+    window.goatcounter.count({ path: name, title: name, event: true });
+  });
+</script>
 </body>
 </html>
