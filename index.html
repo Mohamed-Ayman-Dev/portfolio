@@ -65,6 +65,18 @@
   .nav-links{display:flex; gap:26px; list-style:none; margin:0; padding:0;}
   .nav-links a{font-size:14px; color:rgba(244,243,239,0.82);}
   .nav-links a:hover, .nav-links a:focus-visible{color:#fff;}
+  .nav-actions{display:flex; align-items:center; gap:10px;}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    min-height:40px; padding:0 16px; border-radius:999px;
+    font-size:12px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;
+  }
+  .btn-solid{background:#F4F3EF; color:#10191D;}
+  .btn-solid:hover{background:#fff;}
+  .btn-line{border:1px solid rgba(244,243,239,0.45); color:#F4F3EF;}
+  .btn-line:hover{border-color:#C6A56A; color:#C6A56A;}
+  .cta-pair{display:flex; flex-wrap:wrap; gap:12px; margin:28px 0 10px;}
+  .cta-note{margin:0 0 22px; color:var(--muted); font-size:14px;}
   .nav-toggle{display:none; width:42px; height:42px;}
   .nav-toggle span, .nav-toggle span:before, .nav-toggle span:after{
     display:block; height:1px; width:18px; background:#fff; position:relative;
@@ -314,6 +326,8 @@
   @media (max-width: 860px){
     .nav-links{display:none;}
     .nav-toggle{display:grid; place-items:center;}
+    .nav{padding:14px 16px;}
+    .btn{min-height:36px; padding:0 12px;}
     .film{height:220vh;}
     .chapter, .chapter-end{
       left:22px; right:22px; top:auto; bottom:92px; width:auto;
@@ -351,14 +365,18 @@
     <li><a href="#work">Work</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
-    <li><a href="#contact">Contact</a></li>
   </ul>
-  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span></button>
+  <div class="nav-actions">
+    <a class="btn btn-line" href="assets/Mohamed_Ayman_Flutter_Developer_CV.pdf" download="Mohamed_Ayman_Flutter_Developer_CV.pdf">CV</a>
+    <a class="btn btn-solid" href="#contact">Contact</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span></button>
+  </div>
 </header>
 <nav class="mobile-menu" id="mobileMenu">
   <a href="#work">Work</a>
   <a href="#about">About</a>
   <a href="#experience">Experience</a>
+  <a href="assets/Mohamed_Ayman_Flutter_Developer_CV.pdf" download="Mohamed_Ayman_Flutter_Developer_CV.pdf">Download CV</a>
   <a href="#contact">Contact</a>
 </nav>
 
@@ -601,6 +619,12 @@
           <p class="kicker">05 / Contact</p>
           <h2>Let’s build something that ships.</h2>
           <p class="status">Available for Flutter roles</p>
+          <div class="cta-pair">
+            <a class="btn btn-solid" href="mailto:mohamed.ayman.devv@gmail.com">Email</a>
+            <a class="btn btn-line" href="https://wa.me/201146574367" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn-line" href="assets/Mohamed_Ayman_Flutter_Developer_CV.pdf" download="Mohamed_Ayman_Flutter_Developer_CV.pdf">Download CV</a>
+          </div>
+          <p class="cta-note">Email and WhatsApp are the fastest way to reach me.</p>
         </div>
       </div>
       <a class="contact-row" href="mailto:mohamed.ayman.devv@gmail.com"><span class="num">Email</span><strong>mohamed.ayman.devv@gmail.com</strong><span>↗</span></a>
@@ -839,6 +863,7 @@
     let name = '';
     if (href.includes('mailto:')) name = 'click-email';
     else if (href.includes('Flutter_Developer_CV')) name = 'click-cv';
+    else if (href.includes('wa.me')) name = 'click-whatsapp';
     else if (href.includes('linkedin.com')) name = 'click-linkedin';
     else if (href.includes('apps.apple.com') || href.includes('play.google.com')) name = 'click-store';
     if (!name) return;
