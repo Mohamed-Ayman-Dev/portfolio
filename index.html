@@ -4,1366 +4,674 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mohamed Ayman — Flutter Developer</title>
-
-<!-- SEO -->
-<meta name="description" content="Mohamed Ayman — Flutter Developer in Egypt. 3.5+ years Flutter, over 5 years in software, 20+ production apps for the Saudi market and also Egypt — social, marketplaces, booking, maps, payments, and camera/AR. Clean Architecture and BLoC, from estimate to store release.">
+<meta name="description" content="Mohamed Ayman — Flutter developer in Cairo. 3.5+ years Flutter, over 5 years in software, 20+ production apps for the Saudi market and also Egypt.">
 <meta name="author" content="Mohamed Ayman">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#000000">
-<link rel="canonical" href="https://mohamed-ayman-dev.github.io/">
-
-<!-- Open Graph / social sharing -->
-<meta property="og:type" content="website">
-<meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="Mohamed Ayman">
+<meta name="theme-color" content="#10191D">
 <meta property="og:title" content="Mohamed Ayman — Flutter Developer">
-<meta property="og:description" content="Flutter developer in Egypt. 3.5+ years Flutter, over 5 years in software, 20+ production apps — primarily Saudi market, also Egypt. Social, marketplaces, booking, maps, payments, camera/AR. Open to remote, relocate, hybrid, or on-site.">
-<meta property="og:url" content="https://mohamed-ayman-dev.github.io/">
-<meta property="og:image" content="https://mohamed-ayman-dev.github.io/assets/og-cover-v3.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Mohamed Ayman — Flutter Developer">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Mohamed Ayman — Flutter Developer">
-<meta name="twitter:description" content="Flutter developer in Egypt. 3.5+ years Flutter, over 5 years in software, 20+ production apps — primarily Saudi market, also Egypt. Social, marketplaces, booking, payments, camera/AR.">
-<meta name="twitter:image" content="https://mohamed-ayman-dev.github.io/assets/og-cover-v3.png">
-<meta name="twitter:image:alt" content="Mohamed Ayman — Flutter Developer">
-
-<!-- Favicon -->
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23000000'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%23FF5722' font-family='sans-serif' font-weight='bold'%3EM%3C/text%3E%3C/svg%3E">
-<link rel="apple-touch-icon" href="https://mohamed-ayman-dev.github.io/assets/apple-touch-icon.png">
-
-<!-- Structured data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://mohamed-ayman-dev.github.io/#website",
-      "url": "https://mohamed-ayman-dev.github.io/",
-      "name": "Mohamed Ayman",
-      "inLanguage": "en",
-      "publisher": { "@id": "https://mohamed-ayman-dev.github.io/#person" }
-    },
-    {
-      "@type": "Person",
-      "@id": "https://mohamed-ayman-dev.github.io/#person",
-      "name": "Mohamed Ayman",
-      "jobTitle": "Flutter Developer",
-      "email": "mohamed.ayman.devv@gmail.com",
-      "telephone": "+201146574367",
-      "url": "https://mohamed-ayman-dev.github.io/",
-      "image": "https://mohamed-ayman-dev.github.io/assets/og-cover-v3.png",
-      "address": { "@type": "PostalAddress", "addressLocality": "Cairo", "addressCountry": "EG" },
-      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Helwan University" },
-      "worksFor": { "@type": "Organization", "name": "Wady", "url": "https://wady.sa/" },
-      "sameAs": [
-        "https://github.com/Mohamed-Ayman-Dev",
-        "https://www.linkedin.com/in/mohamed-ayman-devv"
-      ],
-      "description": "Flutter developer based in Egypt. 3.5+ years Flutter, over 5 years in software, 20+ production apps primarily for the Saudi market, and also the Egyptian market — from estimate to store release.",
-      "knowsAbout": ["Flutter", "Dart", "Clean Architecture", "BLoC", "Cubit", "Provider", "Riverpod", "Dio", "go_router", "Crashlytics", "Payments", "Agora", "Google Maps", "Apple Pay"]
-    }
-  ]
-}
-</script>
-
+<meta property="og:description" content="From a messy brief to a live store listing. Flutter, payments, and the apps that shipped.">
+<meta property="og:image" content="assets/film/01-intro.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2310191D'/%3E%3Ctext x='50' y='62' font-size='42' text-anchor='middle' fill='%23F4F3EF' font-family='sans-serif' font-weight='600'%3EM%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#000000;
-    --bg2:#0A0A0A;
-    --panel:#1A1A1A;
-    --panel-hover:#222222;
-    --border:rgba(255,255,255,0.08);
-    --border-strong:rgba(255,255,255,0.14);
-    --accent:#FF5722;
-    --accent-dim:rgba(255,87,34,0.10);
-    --gold:#E8A54B;
-    --pink:#E0678F;
-    --text:#F5F5F5;
-    --muted:#9A9A9A;
-    --radius:16px;
+    --bg:#10191D;
+    --text:#F4F3EF;
+    --muted:#A7B4B8;
+    --dim:#6D7C81;
+    --gold:#C6A56A;
+    --line:rgba(244,243,239,0.14);
+    --nav:72px;
   }
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth; background:#000;}
+  html{background:var(--bg); scroll-padding-top:88px;}
   body{
     margin:0;
-    background:#000;
+    background:var(--bg);
     color:var(--text);
-    font-family:'Inter',system-ui,sans-serif;
-    line-height:1.65;
+    font-family:"Instrument Sans",system-ui,sans-serif;
+    line-height:1.5;
   }
-  .display{font-family:'Space Grotesk',sans-serif;}
-  .mono{font-family:'JetBrains Mono',monospace;}
   a{color:inherit; text-decoration:none;}
-  ::selection{background:var(--accent); color:#fff;}
-  .wrap{max-width:1180px; margin:0 auto; padding:0 32px; position:relative; z-index:1;}
-  main, footer{position:relative; z-index:1;}
-  main#top{max-width:none; padding:0; width:100%;}
+  button{font:inherit; color:inherit; background:none; border:0; padding:0; cursor:pointer;}
+  img{max-width:100%; display:block;}
+  ::selection{background:#F4F3EF; color:#10191D;}
 
-  main > section:nth-of-type(odd){ background:#000; }
-  main > section:nth-of-type(even){ background:#0A0A0A; }
-  .hero{
-    position:relative;
-    overflow:hidden;
+  .nav{
+    position:fixed; inset:0 0 auto 0; z-index:40;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:22px 28px;
+    transition:background .3s ease, border-color .3s ease;
+    border-bottom:1px solid transparent;
   }
-  .hero::before{
-    content:'';
-    position:absolute;
-    inset:0;
-    pointer-events:none;
-    background:radial-gradient(ellipse 55% 48% at 80% 20%, rgba(255,87,34,0.09), transparent 58%);
+  .nav.is-solid{
+    background:rgba(16,25,29,0.92);
+    backdrop-filter:blur(16px);
+    border-bottom-color:var(--line);
   }
-
-  /* NAV */
-  header.nav{position:sticky; top:0; z-index:60; background:#000; border-bottom:1px solid var(--border);}
-  .nav-inner{max-width:1180px; margin:0 auto; padding:16px 32px; display:flex; align-items:center; justify-content:space-between; gap:20px;}
-  .logo{
-    font-family:'Space Grotesk',sans-serif; font-size:16px; font-weight:600; color:var(--text);
-    letter-spacing:-0.02em; flex-shrink:0;
+  .wordmark{
+    font-size:11px; font-weight:600; letter-spacing:0.18em;
   }
-  .logo .accent{color:var(--accent);}
-  .nav-links{
-    display:flex; gap:28px; list-style:none; margin:0; padding:0 0 8px; font-size:14px; color:var(--muted);
-    position:relative;
+  .nav-links{display:flex; gap:26px; list-style:none; margin:0; padding:0;}
+  .nav-links a{font-size:14px; color:rgba(244,243,239,0.82);}
+  .nav-links a:hover, .nav-links a:focus-visible{color:#fff;}
+  .nav-toggle{display:none; width:42px; height:42px;}
+  .nav-toggle span, .nav-toggle span:before, .nav-toggle span:after{
+    display:block; height:1px; width:18px; background:#fff; position:relative;
   }
-  .nav-links::after{
-    content:'';
-    position:absolute;
-    left:0; bottom:0;
-    height:2px; width:var(--ink-w, 0px);
-    transform:translateX(var(--ink-x, 0px));
-    background:var(--accent);
-    border-radius:2px;
-    pointer-events:none;
-    transition:transform .4s cubic-bezier(.22,1,.36,1), width .4s cubic-bezier(.22,1,.36,1), opacity .25s;
-    opacity:var(--ink-on, 0);
-  }
-  .nav-links a{
-    position:relative;
-    padding:4px 0;
-    color:var(--muted);
-    transition:color .25s ease;
-  }
-  .nav-links a:hover{color:var(--text);}
-  .nav-links a.active{color:#fff;}
-  .mobile-menu a.active{color:#fff; background:var(--accent-dim);}
-  .nav-actions{display:flex; align-items:center; gap:10px; flex-shrink:0;}
-  .nav-hire{padding:9px 18px; font-size:13.5px;}
-  .nav-toggle{
-    display:none; background:none; border:1px solid var(--border); border-radius:10px; padding:8px 10px;
-    color:var(--text); cursor:pointer; line-height:0;
-  }
-  .nav-toggle svg{width:20px; height:20px;}
+  .nav-toggle span:before, .nav-toggle span:after{content:""; position:absolute; left:0;}
+  .nav-toggle span:before{top:-6px;}
+  .nav-toggle span:after{top:6px;}
   .mobile-menu{
-    display:none; flex-direction:column; gap:2px; list-style:none; margin:0; padding:10px 24px 18px;
-    background:#000; border-bottom:1px solid var(--border);
+    display:none; position:fixed; inset:64px 16px auto 16px; z-index:39;
+    background:#172226; border:1px solid var(--line); border-radius:16px; padding:8px;
   }
-  .mobile-menu a{display:block; padding:11px 8px; font-size:15px; color:var(--muted); border-radius:8px;}
-  .mobile-menu a:hover{color:var(--text); background:var(--accent-dim);}
-  .mobile-menu.open{display:flex;}
+  .mobile-menu.open{display:grid;}
+  .mobile-menu a{padding:14px 16px; border-radius:10px;}
+  .mobile-menu a:hover{background:rgba(255,255,255,0.04);}
 
-  /* HERO */
-  .hero{padding:110px 0 150px; text-align:center;}
-  .pill{
-    display:inline-flex; align-items:center; gap:8px; font-family:'Inter',system-ui,sans-serif; font-size:11.5px;
-    font-weight:600; letter-spacing:0.12em; text-transform:uppercase;
-    color:var(--accent); background:var(--accent-dim); border:1px solid rgba(255,87,34,0.28);
-    padding:7px 16px; border-radius:999px; margin-bottom:28px;
+  .film{height:640vh; position:relative;}
+  .film-sticky{
+    position:sticky; top:0; height:100vh; overflow:hidden; background:#0c1215;
   }
-  .pill-dot{width:6px; height:6px; border-radius:50%; background:var(--accent); animation:pulse 2.8s ease-in-out infinite;}
-  @keyframes pulse{0%,100%{opacity:1;} 50%{opacity:.45;}}
-  .hero h1{
-    font-size:clamp(34px,5.4vw,60px); font-weight:700; color:var(--text); margin:0 0 6px; line-height:1.08;
-    letter-spacing:-0.03em;
-    animation:titleIn .9s cubic-bezier(.16,1,.3,1) .12s both;
+  .hero-video{
+    position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover; object-position:center center;
+    background:#0c1215;
   }
-  .hero h1 .accent{color:var(--accent);}
-  .hero h2{font-size:clamp(18px,2.4vw,24px); font-weight:500; color:var(--text); margin:0 0 22px;}
-  .hero p{max-width:720px; margin:0 auto 34px; color:var(--muted); font-size:16px; line-height:1.65;}
-  .cta-row{display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:34px;}
-  .btn{
-    display:inline-flex; align-items:center; gap:8px; padding:13px 24px; border-radius:999px;
-    font-size:14.5px; font-weight:600; cursor:pointer; border:1px solid transparent; transition:transform .15s, box-shadow .15s, background .15s;
+  .shade{
+    position:absolute; inset:0; pointer-events:none;
+    background:linear-gradient(90deg, rgba(16,25,29,0.05) 0%, rgba(16,25,29,0.02) 42%, rgba(16,25,29,0.55) 68%, rgba(16,25,29,0.88) 100%);
+    transition:background .4s ease;
   }
-  .btn:active{transform:scale(0.96);}
-  .btn-primary{background:var(--accent); color:#fff;}
-  .btn-primary:hover{transform:translateY(-1px); box-shadow:0 8px 20px rgba(255,87,34,0.18);}
-  .btn-ghost{background:transparent; border-color:var(--border-strong); color:var(--text);}
-  .btn-ghost:hover{background:rgba(255,255,255,0.05);}
-  .btn-text{color:var(--muted); font-size:14.5px; display:inline-flex; align-items:center; gap:6px; padding:13px 6px;}
-  .btn-text:hover{color:var(--accent);}
-  .social-row{display:flex; gap:14px; justify-content:center;}
-  .social-icon{
-    width:38px; height:38px; border-radius:50%; border:1px solid var(--border);
-    display:flex; align-items:center; justify-content:center; color:var(--muted); transition:all .15s;
-    cursor:pointer;
+  .film.is-late .shade, .film.is-end .shade{
+    background:linear-gradient(180deg, rgba(16,25,29,0.08) 28%, rgba(16,25,29,0.55) 68%, rgba(16,25,29,0.9) 100%);
   }
-  .social-icon:hover{border-color:var(--accent); color:var(--accent); transform:translateY(-2px);}
-  .social-icon svg{width:16px; height:16px; pointer-events:none;}
+  .film.is-late .chapter:not(.chapter-end){
+    right:auto; left:6vw; top:auto; bottom:18vh; width:min(520px, 48vw); transform:none;
+  }
+  .film.is-late .chapter.is-on:not(.chapter-end){transform:none;}
+  .chapter{
+    position:absolute; right:7vw; top:50%; width:min(460px, 40vw);
+    transform:translateY(-42%);
+    opacity:0; visibility:hidden; pointer-events:none;
+    transition:opacity .45s ease, transform .5s ease;
+  }
+  .chapter.is-on{opacity:1; visibility:visible; transform:translateY(-50%); pointer-events:auto;}
+  .chapter-end{
+    right:auto; left:6vw; top:auto; bottom:16vh; width:min(640px, 52vw);
+    transform:translateY(12px);
+  }
+  .chapter-end.is-on{transform:none;}
+  .kicker{
+    margin:0 0 14px;
+    font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--muted);
+  }
+  .chapter h1, .chapter h2{
+    margin:0 0 16px;
+    font-weight:500; letter-spacing:-0.045em; line-height:0.96;
+    font-size:clamp(44px, 5.6vw, 84px);
+  }
+  .chapter p{margin:0; max-width:38ch; color:#D5DEE1; font-size:16.5px; line-height:1.55;}
+  .cue{
+    margin-top:28px; display:inline-flex; align-items:center; gap:8px;
+    font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--text);
+  }
+  .cue i{
+    width:7px; height:7px; border-right:1px solid #fff; border-bottom:1px solid #fff;
+    transform:rotate(45deg); animation:bob 1.4s ease-in-out infinite;
+  }
+  @keyframes bob{50%{transform:translateY(4px) rotate(45deg);}}
+  .status{color:var(--gold); font-size:14px; margin-top:18px;}
+  .continue{
+    margin-top:22px; display:inline-flex; align-items:center; gap:8px;
+    font-size:11px; letter-spacing:0.16em; text-transform:uppercase;
+  }
+  .continue:hover{color:var(--gold);}
 
-  /* SECTION SHARED */
-  section{padding:90px 0;}
-  .section-title{text-align:center; margin-bottom:56px;}
-  .section-kicker{
-    margin:0 0 10px; font-size:12px; font-weight:600; letter-spacing:0.16em;
-    text-transform:uppercase; color:var(--accent);
+  .rail{
+    position:absolute; left:28px; right:28px; bottom:16px; z-index:5;
   }
-  .section-title h2{font-size:clamp(26px,3.2vw,34px); color:var(--text); font-weight:700; margin:0 0 12px;}
-  .section-title.reveal.in h2{
-    animation:headingIn .55s cubic-bezier(.22,1,.36,1) both;
+  .rail-labels{
+    display:grid; grid-template-columns:repeat(6, 1fr);
+    font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(244,243,239,0.38);
   }
-  @keyframes headingIn{
-    from{opacity:0; transform:translateY(12px); letter-spacing:0.08em;}
-    to{opacity:1; transform:none; letter-spacing:normal;}
+  .rail-labels button{text-align:left; padding:8px 0;}
+  .rail-labels button.is-on{color:#fff;}
+  .rail-labels button:hover{color:#fff;}
+  .rail-track{height:1px; background:rgba(244,243,239,0.22); position:relative;}
+  .rail-fill{position:absolute; left:0; top:-0.5px; height:2px; width:0; background:#fff;}
+
+  .sheet{position:relative; z-index:2; background:var(--bg);}
+  .block{max-width:1120px; margin:0 auto; padding:88px 28px;}
+  .block h2{
+    margin:8px 0 0; font-size:clamp(36px, 4.5vw, 56px); font-weight:500;
+    letter-spacing:-0.04em; line-height:1.02;
   }
-  .section-lead{color:var(--muted); font-size:15px; max-width:560px; margin:16px auto 0; line-height:1.6;}
-  .section-rule{width:70px; height:2px; background:linear-gradient(90deg,transparent,var(--accent),transparent); margin:0 auto;}
-  .reveal{opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease;}
-  .reveal.in{opacity:1; transform:translateY(0);}
-  .hero > *:not(h1){animation:rise .55s ease both;}
-  .hero .pill{animation-delay:.02s;}
-  .hero h2{animation-delay:.22s;}
-  .hero p{animation-delay:.28s;}
-  .hero .cta-row{animation-delay:.34s;}
-  .hero .social-row{animation-delay:.4s;}
-  @keyframes rise{from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:none;}}
-  @keyframes titleIn{
-    from{opacity:0; letter-spacing:0.14em; transform:translateY(14px);}
-    to{opacity:1; letter-spacing:-0.03em; transform:none;}
+  .lead{max-width:46ch; color:var(--muted); margin:18px 0 0; font-size:16px;}
+
+  .index-head{
+    display:flex; justify-content:space-between; gap:24px; align-items:end;
+    padding-bottom:28px;
+  }
+  .index-row, .more-row, .role, .contact-row{
+    display:grid; gap:18px; align-items:center;
+    border-top:1px solid var(--line); padding:18px 0;
+  }
+  .index-row{grid-template-columns:42px 1.1fr 1.3fr 16px;}
+  .index-row:hover{color:#fff;}
+  .num{color:var(--dim); font-size:13px;}
+  .aside{color:var(--muted); font-size:14px;}
+  .chev{color:var(--dim); justify-self:end;}
+
+  .project{
+    display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:center;
+    padding:78px 0; border-top:1px solid var(--line);
+  }
+  .shot{
+    min-height:380px; border-radius:18px; display:grid; place-items:center;
+    background-color:#0d1418;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+    background-size:32px 32px;
+    position:relative; overflow:hidden;
+  }
+  .shot-meta{
+    position:absolute; top:18px; left:18px; right:18px;
+    display:flex; justify-content:space-between; gap:12px;
+    font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--dim);
+  }
+  .shot img{
+    width:min(230px, 42%);
+    border-radius:24px;
+    box-shadow:0 30px 70px rgba(0,0,0,0.5);
+  }
+  .eyebrow{font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--dim); margin:0 0 12px;}
+  .project h3{margin:0 0 12px; font-size:clamp(32px, 3vw, 44px); font-weight:500; letter-spacing:-0.04em;}
+  .project p{margin:0; color:#D5DEE1; font-size:16px;}
+  .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:18px;}
+  .tags span{
+    font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted);
+    border:1px solid var(--line); border-radius:999px; padding:6px 10px;
+  }
+  .stores{display:flex; flex-wrap:wrap; gap:14px 18px; margin-top:18px;}
+  .stores a{font-size:14px; color:var(--text); border-bottom:1px solid transparent;}
+  .stores a:hover{border-bottom-color:var(--gold); color:var(--gold);}
+  .section-top{display:flex; justify-content:space-between; align-items:flex-start; gap:32px; margin-bottom:8px;}
+  .section-top > div{flex:1; min-width:0;}
+  .section-top .quiet{flex:none; margin-top:42px; white-space:nowrap;}
+  #work, #about, #experience, #expertise, #contact, #index{scroll-margin-top:84px;}
+  .quiet{font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted);}
+
+  .role{grid-template-columns:200px 1fr; align-items:start; padding:32px 0;}
+  .role h3{margin:0 0 6px; font-size:22px; font-weight:500; letter-spacing:-0.03em;}
+  .role .where{color:var(--muted); margin:0;}
+  .role p{margin:0; color:#D5DEE1;}
+  .when{color:var(--dim); font-size:13px; letter-spacing:0.04em; margin-top:8px;}
+
+  .facts{display:grid; gap:0; margin-top:8px;}
+  .fact{
+    display:grid; grid-template-columns:110px 1fr; gap:16px;
+    padding:14px 0; border-top:1px solid var(--line); font-size:15px;
+  }
+  .fact span{color:var(--dim); font-size:11px; letter-spacing:0.14em; text-transform:uppercase; padding-top:3px;}
+  .about-grid{display:grid; grid-template-columns:1.3fr 0.8fr; gap:64px; align-items:start;}
+  .about-grid p{color:#D5DEE1; font-size:16.5px;}
+  .gold{color:var(--gold);}
+
+  .expertise{display:grid; grid-template-columns:repeat(3, 1fr); gap:28px; margin-top:36px;}
+  .expertise article{border-top:1px solid var(--line); padding-top:18px;}
+  .expertise h3{margin:0 0 12px; font-size:16px; font-weight:500;}
+  .expertise li{color:var(--muted); margin:7px 0; font-size:14.5px;}
+  .expertise ul{margin:0; padding:0; list-style:none;}
+
+  .more-row{grid-template-columns:42px 1fr auto; }
+  .more-row a:hover{color:var(--gold);}
+
+  .contact-row{grid-template-columns:160px 1fr auto; padding:16px 0;}
+  .contact-row a:hover{color:var(--gold);}
+  .contact-intro{display:flex; justify-content:space-between; gap:40px; align-items:end; margin-bottom:28px;}
+
+  footer{
+    display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
+    max-width:1120px; margin:0 auto; padding:28px 28px 40px;
+    color:var(--dim); font-size:12px; letter-spacing:0.12em; text-transform:uppercase;
+    border-top:1px solid var(--line);
+  }
+  footer a:hover{color:#fff;}
+
+  @media (max-width: 860px){
+    .nav-links{display:none;}
+    .nav-toggle{display:grid; place-items:center;}
+    .film{height:520vh;}
+    .chapter, .chapter-end{
+      left:22px; right:22px; top:auto; bottom:92px; width:auto;
+      transform:none;
+    }
+    .chapter.is-on, .chapter-end.is-on{transform:none;}
+    .chapter h1, .chapter h2{font-size:40px;}
+    .shade, .film.is-end .shade{
+      background:linear-gradient(180deg, rgba(16,25,29,0.15) 0%, rgba(16,25,29,0.2) 40%, rgba(16,25,29,0.92) 100%);
+    }
+    .rail-labels{font-size:0;}
+    .rail-labels button.is-on{font-size:10px;}
+    .project, .about-grid, .role, .expertise, .contact-intro{grid-template-columns:1fr; display:grid;}
+    .index-row{grid-template-columns:32px 1fr 16px;}
+    .index-row .aside{display:none;}
+    .shot{min-height:300px;}
+    .contact-row{grid-template-columns:1fr auto;}
+    .contact-row .num{display:none;}
+    .expertise{grid-template-columns:1fr;}
   }
   @media (prefers-reduced-motion: reduce){
-    .reveal, .hero > *, .hero h1, .section-title.reveal.in h2{animation:none; opacity:1; transform:none; letter-spacing:-0.03em; transition:none;}
-    .pill-dot{animation:none;}
-    .nav-links::after{transition:none;}
+    .film{height:auto;}
+    .film-sticky{position:relative; height:auto; min-height:100vh;}
+    .frame{transition:none;}
+    .cue i{animation:none;}
+    .chapter{transition:none;}
   }
-
-  /* ABOUT */
-  .about-grid{display:grid; grid-template-columns:1.15fr 0.85fr; gap:60px; align-items:start;}
-  .about-body p{color:#B8B8B8; font-size:15.5px; margin:0 0 16px; line-height:1.7;}
-  .about-chips{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:26px;}
-  .about-chip{
-    display:flex; align-items:center; gap:12px; background:var(--panel); border:1px solid var(--border);
-    border-radius:11px; padding:14px 16px; color:var(--text); transition:border-color .15s;
-  }
-  .about-chip:hover{border-color:var(--border-strong);}
-  .about-chip svg{width:19px; height:19px; color:var(--accent); flex-shrink:0;}
-  .about-chip strong{
-    display:block; font-family:'Space Grotesk',sans-serif; font-size:15.5px;
-    font-weight:600; color:var(--text); line-height:1.25;
-  }
-  .about-chip span{display:block; font-size:12px; color:var(--muted); line-height:1.35;}
-  .architecture-visual{
-    background:var(--panel); border:1px solid var(--border); border-radius:20px; padding:28px;
-    box-shadow:0 30px 70px -40px rgba(0,0,0,0.45);
-  }
-  .arch-title{font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--muted); margin-bottom:18px; text-transform:uppercase; letter-spacing:0.06em;}
-  .arch-layer{
-    display:flex; align-items:flex-start; gap:14px;
-    border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:10px;
-    background:rgba(255,255,255,0.015);
-  }
-  .arch-layer:last-child{margin-bottom:0;}
-  .arch-layer .l-num{
-    font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent); font-weight:600;
-    line-height:1.2; padding-top:2px; min-width:1.6em;
-  }
-  .arch-layer .l-name{font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--text); font-weight:600;}
-  .arch-layer .l-sub{font-size:11.5px; color:var(--muted); margin-top:3px; line-height:1.45;}
-  /* EXPERIENCE - timeline */
-  .timeline{position:relative; margin-left:12px; border-left:2px solid var(--border); padding-left:0;}
-  .tl-item{position:relative; padding:0 0 34px 34px;}
-  .tl-item:last-child{padding-bottom:0;}
-  .tl-dot{position:absolute; left:-7px; top:26px; width:12px; height:12px; border-radius:50%; background:var(--bg); border:2.5px solid var(--accent);}
-  .tl-item.current .tl-dot{background:var(--accent); box-shadow:0 0 10px rgba(255,87,34,0.35);}
-  .tl-card{background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:26px 28px; transition:border-color .2s;}
-  .tl-card:hover{border-color:rgba(255,87,34,0.35);}
-  .tl-top{display:flex; align-items:flex-start; gap:14px; margin-bottom:6px;}
-  .tl-icon{
-    width:38px; height:38px; border-radius:9px; background:var(--accent-dim); border:1px solid var(--border-strong);
-    display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--accent);
-  }
-  .tl-icon svg{width:18px; height:18px;}
-  .tl-role{font-family:'Space Grotesk',sans-serif; font-size:18px; font-weight:600; color:var(--text);}
-  .tl-company{color:var(--accent); font-weight:600; font-size:14.5px;}
-  .tl-company a{color:inherit;}
-  .tl-company a:hover{text-decoration:underline; text-underline-offset:3px;}
-  .tl-badge{
-    font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--gold); background:rgba(217,164,65,0.12);
-    border:1px solid rgba(217,164,65,0.3); padding:3px 9px; border-radius:999px; margin-left:8px;
-  }
-  .tl-meta{display:flex; gap:16px; font-size:12.5px; color:var(--muted); margin:8px 0 16px; font-family:'JetBrains Mono',monospace; flex-wrap:wrap;}
-  .tl-meta span{display:inline-flex; align-items:center; gap:5px;}
-  .tl-list{list-style:none; margin:0 0 16px; padding:0;}
-  .tl-list li{position:relative; padding-left:18px; font-size:14.5px; color:#B8B8B8; margin-bottom:11px; line-height:1.55;}
-  .tl-list li::before{content:"▹"; position:absolute; left:0; color:var(--accent); font-size:12px; top:1px;}
-  .tl-list a{color:var(--accent); font-weight:500;}
-  .tl-list a:hover{text-decoration:underline; text-underline-offset:3px;}
-  .tag-row{display:flex; flex-wrap:wrap; gap:8px;}
-  .tag{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--muted); border:1px solid var(--border); padding:4px 10px; border-radius:6px;}
-
-  /* SKILLS */
-  .skills-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
-  .skill-card{background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:20px; transition:all .18s;}
-  .skill-card:hover{border-color:rgba(255,87,34,0.35); transform:translateY(-3px);}
-  .skill-head{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:12px;}
-  .skill-card ul{list-style:none; margin:0; padding:0;}
-  .skill-card li{font-size:13.5px; color:#B8B8B8; padding:5px 0; position:relative; padding-left:14px;}
-  .skill-card li::before{content:"•"; position:absolute; left:0; color:var(--accent);}
-
-  /* PROJECTS */
-  .proj-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:24px;}
-  .proj-card{
-    background:var(--panel); border:1px solid var(--border); border-radius:18px; padding:18px;
-    transition:border-color .18s, transform .18s, box-shadow .18s; display:flex; flex-direction:column;
-    min-width:0; /* let the card shrink so the strip scrolls instead of widening the grid */
-  }
-  .proj-card:hover{border-color:rgba(255,87,34,0.35); transform:translateY(-4px); box-shadow:0 22px 40px -28px rgba(0,0,0,0.55);}
-  .proj-card.is-extra{display:none;}
-  .proj-grid.is-expanded .proj-card.is-extra{
-    display:flex;
-    animation:projReveal .45s ease both;
-  }
-  .proj-grid.is-expanded .proj-card.is-extra:nth-of-type(10){animation-delay:.05s;}
-  .proj-grid.is-expanded .proj-card.is-extra:nth-of-type(11){animation-delay:.12s;}
-  .proj-grid.is-expanded .proj-card.is-extra.is-revealed{animation:none;}
-  @keyframes projReveal{
-    from{opacity:0; transform:translateY(18px);}
-    to{opacity:1; transform:none;}
-  }
-  .proj-more{display:flex; justify-content:center; margin-top:28px;}
-  .proj-more[hidden]{display:none;}
-
-  /* screenshot carousel */
-  .strip-wrap{position:relative; min-width:0; border-radius:14px; overflow:hidden; background:#141414; border:1px solid rgba(255,255,255,0.07);}
-  .shot-strip{
-    display:flex; gap:10px; height:340px; padding:10px; overflow-x:auto; overscroll-behavior-x:contain;
-    scroll-snap-type:x mandatory; scroll-behavior:smooth; scrollbar-width:none;
-  }
-  .shot-strip::-webkit-scrollbar{display:none;}
-  .shot-strip img{
-    height:100%; width:auto; flex:0 0 auto; border-radius:10px; object-fit:cover;
-    scroll-snap-align:start; cursor:zoom-in; transition:opacity .15s;
-  }
-  .shot-strip img:hover{opacity:0.88;}
-  .strip-nav{
-    position:absolute; top:50%; transform:translateY(-50%); width:32px; height:32px; border-radius:50%;
-    background:rgba(17,17,17,0.82); border:1px solid rgba(255,255,255,0.18); color:#fff; cursor:pointer;
-    display:flex; align-items:center; justify-content:center; backdrop-filter:blur(6px);
-    transition:background .15s, opacity .2s, color .15s;
-  }
-  .strip-nav svg{width:16px; height:16px;}
-  .strip-nav:hover{background:var(--accent); color:#fff; border-color:var(--accent);}
-  .strip-nav[hidden]{display:none;}
-  .strip-prev{left:10px;}
-  .strip-next{right:10px;}
-  .strip-dots{display:flex; gap:6px; justify-content:center; margin:14px 0 4px; min-height:8px;}
-  .strip-dot{
-    width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,0.2);
-    border:none; padding:0; cursor:pointer; transition:background .15s, transform .15s;
-  }
-  .strip-dot.on{background:var(--accent); transform:scale(1.35);}
-
-  /* placeholder tiles share the strip's exact rhythm so every card matches */
-  .shot-ph{
-    height:100%; aspect-ratio:473/1024; flex:0 0 auto; border-radius:10px;
-    background:linear-gradient(155deg, var(--pc1), var(--pc2));
-    border:1px solid rgba(255,255,255,0.08);
-    display:flex; align-items:center; justify-content:center;
-  }
-  .shot-ph svg{width:44px; height:44px;}
-  .live-badge{
-    position:absolute; top:16px; left:16px; z-index:2; font-family:'JetBrains Mono',monospace; font-size:9.5px;
-    background:rgba(17,17,17,0.6); color:#fff; padding:3px 9px; border-radius:999px;
-    display:flex; align-items:center; gap:5px; backdrop-filter:blur(4px); border:1px solid rgba(255,255,255,0.14);
-  }
-  .live-badge::before{content:""; width:5px; height:5px; border-radius:50%; background:#4ADE80;}
-
-  /* LIGHTBOX */
-  .lightbox{
-    position:fixed; inset:0; z-index:100; background:rgba(10,10,10,0.95); backdrop-filter:blur(8px);
-    display:none; align-items:center; justify-content:center; padding:24px;
-  }
-  .lightbox.open{display:flex;}
-  .lb-stage{display:flex; flex-direction:column; align-items:center; gap:16px; max-height:100%;}
-  .lb-img{
-    max-height:76vh; max-width:min(400px,84vw); border-radius:18px; display:block;
-    border:1px solid rgba(255,255,255,0.1); box-shadow:0 40px 90px -30px rgba(0,0,0,0.8);
-  }
-  .lb-caption{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--muted); text-align:center;}
-  .lb-caption b{color:var(--accent); font-weight:600;}
-  .lb-dots{display:flex; gap:7px;}
-  .lb-dot{
-    width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,0.22);
-    border:none; padding:0; cursor:pointer; transition:background .15s, transform .15s;
-  }
-  .lb-dot.on{background:var(--accent); transform:scale(1.3);}
-  .lb-btn{
-    position:absolute; width:44px; height:44px; border-radius:50%; cursor:pointer;
-    background:rgba(26,26,26,0.95); border:1px solid var(--border-strong); color:var(--text);
-    display:flex; align-items:center; justify-content:center; transition:background .15s, transform .15s;
-  }
-  .lb-btn:hover{background:var(--accent-dim); transform:scale(1.06);}
-  .lb-btn svg{width:20px; height:20px;}
-  .lb-prev{left:24px;}
-  .lb-next{right:24px;}
-  .lb-close{top:24px; right:24px;}
-  @media (max-width:600px){
-    .lb-prev{left:10px;} .lb-next{right:10px;}
-    .lb-btn{width:38px; height:38px;}
-    .lb-img{max-height:66vh;}
-  }
-  .proj-name{font-family:'Space Grotesk',sans-serif; font-size:19px; font-weight:600; margin:12px 0 4px;}
-  .proj-roles{font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--accent); margin-bottom:12px; letter-spacing:0.02em;}
-  .proj-desc{font-size:13.5px; color:#B8B8B8; margin:0 0 16px;}
-  .proj-desc b{color:var(--text); font-weight:600;}
-  .proj-tags{display:flex; flex-wrap:wrap; gap:6px; margin-top:auto;}
-  .proj-tags span{font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--muted); border:1px solid var(--border); padding:4px 10px; border-radius:6px;}
-  .proj-stores{display:flex; flex-direction:column; gap:8px; margin-top:14px;}
-  .proj-store{display:flex; flex-wrap:wrap; align-items:center; gap:8px;}
-  .proj-store-label{
-    font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--muted);
-    min-width:76px;
-  }
-  .proj-links{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px;}
-  .proj-store .proj-links{margin-top:0;}
-  .proj-links a{
-    font-size:12px; font-weight:500; color:var(--accent); background:var(--accent-dim);
-    border:1px solid rgba(255,87,34,0.28); padding:8px 13px; border-radius:999px;
-    transition:background .15s, transform .15s;
-  }
-  .proj-links a:hover{background:rgba(255,87,34,0.22); transform:translateY(-1px);}
-
-  /* EDUCATION */
-  .edu-card{background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:26px 28px; max-width:640px; margin:0 auto;}
-  .edu-top{display:flex; align-items:center; gap:14px; margin-bottom:4px;}
-  .edu-icon{width:38px; height:38px; border-radius:9px; background:rgba(217,164,65,0.12); border:1px solid rgba(217,164,65,0.3); display:flex; align-items:center; justify-content:center; color:var(--gold);}
-  .edu-icon svg{width:18px; height:18px;}
-  .edu-degree{font-family:'Space Grotesk',sans-serif; font-size:17px; font-weight:600;}
-  .edu-school{color:var(--accent); font-size:14px; font-weight:600;}
-  .edu-meta{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--muted); margin:10px 0;}
-  .edu-note{font-size:14px; color:#B8B8B8; line-height:1.65; margin:0;}
-
-  /* CONTACT */
-  .contact-card{
-    background:var(--panel); border:1px solid var(--border); border-radius:24px; padding:64px 40px; text-align:center;
-    box-shadow:0 30px 80px -40px rgba(0,0,0,0.45);
-  }
-  .contact-card h2{color:var(--text); font-size:clamp(26px,3.6vw,38px); margin:0 0 14px; font-family:'Space Grotesk',sans-serif; font-weight:700;}
-  .contact-card p{color:var(--muted); max-width:560px; margin:0 auto 30px; font-size:15px; line-height:1.65;}
-  .contact-links{display:flex; justify-content:center; gap:12px; flex-wrap:wrap;}
-  .contact-links a{
-    font-family:'JetBrains Mono',monospace; font-size:13px; padding:11px 18px; border:1px solid var(--border-strong);
-    border-radius:999px; transition:all .15s;
-  }
-  .contact-links a:hover{background:var(--accent-dim); border-color:var(--accent);}
-  footer{text-align:center; padding:30px 0; font-size:12px; color:var(--muted); font-family:'JetBrains Mono',monospace; border-top:1px solid var(--border); background:#000;}
-
-  /* BACK TO TOP */
-  .to-top{
-    position:fixed; right:24px; bottom:24px; width:42px; height:42px; border-radius:50%;
-    background:var(--panel); border:1px solid var(--border-strong); color:var(--accent); cursor:pointer;
-    display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none;
-    transition:opacity .25s, transform .15s; z-index:50;
-  }
-  .to-top.show{opacity:1; pointer-events:auto;}
-  .to-top:hover{transform:translateY(-3px); background:var(--accent-dim);}
-
-  @media (max-width:900px){
-    .nav-links{display:none;}
-    .nav-hire{display:none;}
-    .nav-toggle{display:inline-flex;}
-    .about-grid{grid-template-columns:1fr; gap:28px;}
-    .skills-grid{grid-template-columns:repeat(2,1fr);}
-    .proj-grid{grid-template-columns:1fr;}
-    section{padding:64px 0;}
-    .hero{padding:80px 0 110px;}
-    .wrap{padding:0 22px;}
-    .nav-inner{padding:16px 22px;}
-  }
-  @media (max-width:560px){
-    .shot-strip{height:290px;}
-  }
-  @media (max-width:480px){
-    .skills-grid{grid-template-columns:1fr;}
-    .about-chips{grid-template-columns:1fr;}
-    .contact-card{padding:48px 24px;}
-  }
-  @media (prefers-reduced-motion:reduce){
-    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
-    html{scroll-behavior:auto;}
-  }
-  a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
 </style>
 </head>
 <body>
-
-<header class="nav">
-  <div class="nav-inner">
-    <a href="#top" class="logo" aria-label="Home">Mohamed <span class="accent">Ayman</span></a>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="nav-actions">
-      <a class="btn btn-primary nav-hire" href="#contact">Hire me →</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-    </button>
-    </div>
-  </div>
-  <ul class="mobile-menu" id="mobileMenu">
-    <li><a href="#home">Home</a></li>
+<header class="nav" id="nav">
+  <a class="wordmark" href="#top">MOHAMED AYMAN</a>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
-    <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#contact">Hire me →</a></li>
   </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span></button>
 </header>
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="#work">Work</a>
+  <a href="#about">About</a>
+  <a href="#experience">Experience</a>
+  <a href="#contact">Contact</a>
+</nav>
 
 <main id="top">
+  <section class="film" id="film" aria-label="Introduction">
+    <div class="film-sticky">
+      <video id="heroFilm" class="hero-video" muted playsinline preload="auto" poster="assets/film/hero-poster.jpg" src="assets/film/hero.mp4?v=2"></video>
+      <div class="shade"></div>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="wrap">
-    <span class="pill"><span class="pill-dot"></span>Available for opportunities</span>
-    <h1 class="display">Mohamed <span class="accent">Ayman</span></h1>
-    <h2>Flutter Developer</h2>
-    <p>I take Flutter products from a messy brief to a live store listing — and keep them there. 3.5+ years in Flutter, over 5 years in software. 20+ apps across social, marketplaces, booking, and others. Experience primarily in the Saudi market, also Egypt. Based in Egypt; open to remote, relocate, hybrid, or on-site.</p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mohamed.ayman.devv@gmail.com&amp;su=Hi%20Mohamed" target="_blank" rel="noopener">✉ Contact Me</a>
-      <a class="btn btn-ghost" href="#projects">View Projects ↓</a>
-      <a class="btn btn-ghost" href="assets/Mohamed_Ayman_Flutter_Developer_CV.pdf" target="_blank" rel="noopener">CV ↗</a>
-    </div>
-    <div class="social-row">
-      <a class="social-icon" href="https://github.com/Mohamed-Ayman-Dev" target="_blank" rel="noopener" aria-label="GitHub">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.54 2.87 8.39 6.84 9.75.5.1.68-.22.68-.5v-1.75c-2.78.62-3.37-1.37-3.37-1.37-.46-1.2-1.11-1.52-1.11-1.52-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.3 9.3 0 015 0c1.9-1.33 2.74-1.05 2.74-1.05.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.74 0 3.92-2.34 4.78-4.57 5.04.36.32.68.94.68 1.9v2.82c0 .28.18.6.69.5A10.03 10.03 0 0022 12.26C22 6.58 17.52 2 12 2z"/></svg>
-      </a>
-      <a class="social-icon" href="https://www.linkedin.com/in/mohamed-ayman-devv" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 11-4-.002 2 2 0 014 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-3.96 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.68-2.91V8.48z"/></svg>
-      </a>
-      <a class="social-icon" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mohamed.ayman.devv@gmail.com&amp;su=Hi%20Mohamed" target="_blank" rel="noopener" aria-label="Email Mohamed at mohamed.ayman.devv@gmail.com">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
-      </a>
-      <a class="social-icon" href="tel:+201146574367" aria-label="Phone">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.8a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.28-1.27a2 2 0 012.11-.45c.9.34 1.84.57 2.8.7A2 2 0 0122 16.92z"/></svg>
-      </a>
-    </div>
+      <div class="chapter is-on" data-chapter="0">
+        <p class="kicker">01 / 06 Intro</p>
+        <p class="kicker" style="margin-top:-8px">Flutter developer / Cairo, Egypt</p>
+        <h1>Mohamed Ayman</h1>
+        <p>From a messy brief to a live store listing.</p>
+        <div class="cue">Scroll to explore <i></i></div>
+      </div>
+      <div class="chapter" data-chapter="1">
+        <p class="kicker">02 / 06 About</p>
+        <h2>Shipping is the work.</h2>
+        <p>3.5+ years in Flutter, over 5 years in software. 20+ production apps, primarily for the Saudi market, and also Egypt.</p>
+      </div>
+      <div class="chapter" data-chapter="2">
+        <p class="kicker">03 / 06 Expertise</p>
+        <h2>The stack behind the listing.</h2>
+        <p>Feature-first Clean Architecture and BLoC. Payments, maps, chat, and cameras already live in the apps — not a demo checkout.</p>
+      </div>
+      <div class="chapter" data-chapter="3">
+        <p class="kicker">04 / 06 Work</p>
+        <h2>Two apps, not one listing.</h2>
+        <p>Customer and provider. Estimate, both binaries, App Store and Google Play, then keep them live.</p>
+      </div>
+      <div class="chapter" data-chapter="4">
+        <p class="kicker">05 / 06 Experience</p>
+        <h2>Wady, now.</h2>
+        <p>Flutter developer, remote from Cairo. Before that Topline, freelance with Wady, and analysis and QA at Entlq.</p>
+      </div>
+      <div class="chapter chapter-end" data-chapter="5">
+        <p class="kicker">The film / complete</p>
+        <h2>The detailed work begins here.</h2>
+        <p class="status">Available for Flutter roles — remote, relocate, hybrid, or on-site.</p>
+        <a class="continue" href="#index">Continue to selected work <i style="display:inline-block;width:7px;height:7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg)"></i></a>
+      </div>
+
+      <div class="rail">
+        <div class="rail-labels" id="rail">
+          <button type="button" data-at="0">01 Intro</button>
+          <button type="button" data-at="0.18">02 About</button>
+          <button type="button" data-at="0.36">03 Expertise</button>
+          <button type="button" data-at="0.54">04 Work</button>
+          <button type="button" data-at="0.72">05 Experience</button>
+          <button type="button" data-at="0.9">06 Final</button>
+        </div>
+        <div class="rail-track"><div class="rail-fill" id="railFill"></div></div>
+      </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="wrap">
-    <div class="section-title reveal">
-      <p class="section-kicker">What I do</p>
-      <h2 class="display">About Me</h2>
-      <div class="section-rule"></div>
-    </div>
-    <div class="about-grid">
-      <div class="about-body reveal">
-        <p>I'm a Flutter developer based in Egypt, with 3.5+ years shipping production iOS and Android apps, and over 5 years in software, across different product types — social, marketplace, booking, and others. Experience is primarily in the Saudi market, and also the Egyptian market. I have shipped the mobile side from estimate through the stores, on both the customer and provider apps. 20+ live listings and 30K+ downloads.</p>
-        <p>I have handled client scope and technical trade-offs, set the architecture in feature-first Clean Architecture and BLoC, and shipped under the deadline. On a client product I was the technical point of contact for a 3-developer Flutter team: estimates, how the work was split, and the technical calls.</p>
-        <p>I work in feature-first Clean Architecture and BLoC/Cubit. Payments, chat, maps, and in-app cameras are already in the apps I've shipped — Mada, Visa, Apple Pay, Tabby, Tamara, HyperPay — not a demo checkout.</p>
-        <div class="about-chips">
-          <div class="about-chip">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2" stroke-linecap="round"/></svg>
-            <div><strong>3.5+ years</strong><span>production Flutter</span></div>
-          </div>
-          <div class="about-chip">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M10.5 18.5h3" stroke-linecap="round"/></svg>
-            <div><strong>20+ apps</strong><span>shipped to production</span></div>
-          </div>
-          <div class="about-chip">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3v11m0 0l-4-4m4 4l4-4"/><path d="M4 18h16"/></svg>
-            <div><strong>30K+ downloads</strong><span>across store listings</span></div>
-          </div>
-          <div class="about-chip">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 010 18M12 3a15 15 0 000 18"/></svg>
-            <div><strong>Based in Egypt</strong><span>remote · relocate · hybrid · on-site</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="architecture-visual reveal">
-        <div class="arch-title">// how I ship</div>
-        <div class="arch-layer">
-          <div class="l-num">01</div>
-          <div>
-            <div class="l-name">Estimate</div>
-            <div class="l-sub">Brief → scope the mobile work</div>
-          </div>
-        </div>
-        <div class="arch-layer">
-          <div class="l-num">02</div>
-          <div>
-            <div class="l-name">Build</div>
-            <div class="l-sub">Flutter, payments, the real features</div>
-          </div>
-        </div>
-        <div class="arch-layer">
-          <div class="l-num">03</div>
-          <div>
-            <div class="l-name">Release</div>
-            <div class="l-sub">App Store + Google Play</div>
-          </div>
-        </div>
-        <div class="arch-layer">
-          <div class="l-num">04</div>
-          <div>
-            <div class="l-name">Keep live</div>
-            <div class="l-sub">Crashes, the next slice, listing stays up</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="wrap">
-    <div class="section-title reveal">
-      <p class="section-kicker">Stack</p>
-      <h2 class="display">Skills &amp; Technologies</h2>
-      <div class="section-rule"></div>
-    </div>
-    <div class="skills-grid reveal">
-      <div class="skill-card">
-        <div class="skill-head">Mobile Development</div>
-        <ul>
-          <li>Flutter &amp; Dart</li>
-          <li>iOS &amp; Android store release</li>
-          <li>App flavors / multiple binaries</li>
-          <li>RTL, camera, maps, profiling</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <div class="skill-head">Architecture &amp; State</div>
-        <ul>
-          <li>Feature-first Clean Architecture</li>
-          <li>BLoC / Cubit</li>
-          <li>Provider · Riverpod · GetIt</li>
-          <li>Repository / UseCase</li>
-          <li>go_router / auto_route</li>
-          <li>Dio</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <div class="skill-head">Realtime, Video &amp; AR</div>
-        <ul>
-          <li>Agora / Zego live video</li>
-          <li>Pusher</li>
-          <li>Firebase Realtime</li>
-          <li>AR / camera filters</li>
-          <li>In-app camera</li>
-          <li>FCM &amp; deep linking</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <div class="skill-head">Payments</div>
-        <ul>
-          <li>Mada · Visa · Apple Pay</li>
-          <li>Tabby · Tamara (BNPL)</li>
-          <li>HyperPay / PayTabs</li>
-          <li>In-app wallets</li>
-          <li>Payouts &amp; cash</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <div class="skill-head">Product Surfaces</div>
-        <ul>
-          <li>Social (stories, Pusher chat, groups)</li>
-          <li>Maps</li>
-          <li>Marketplace &amp; RFQ</li>
-          <li>Booking &amp; scheduling</li>
-          <li>Referrals &amp; scratch-to-win</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <div class="skill-head">Maps &amp; Delivery</div>
-        <ul>
-          <li>Google Maps</li>
-          <li>Map pins &amp; location</li>
-          <li>QR scan &amp; redeem</li>
-          <li>REST · Dio</li>
-          <li>Crashlytics</li>
-          <li>GitHub Actions</li>
-        </ul>
-      </div>
-    </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="wrap">
-    <div class="section-title reveal">
-      <p class="section-kicker">Portfolio</p>
-      <h2 class="display">Projects</h2>
-      <div class="section-rule"></div>
-      <p class="section-lead">Social, marketplaces, booking, maps, payments, and camera/AR — different products, not one template.</p>
-    </div>
-    <div class="proj-grid" id="projectGrid"></div>
-    <div class="proj-more" id="projMore" hidden>
-      <button type="button" class="btn btn-ghost" id="projMoreBtn" aria-expanded="false" aria-controls="projectGrid">Show more</button>
-    </div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <div class="wrap">
-    <div class="section-title reveal">
-      <p class="section-kicker">Work</p>
-      <h2 class="display">Experience</h2>
-      <div class="section-rule"></div>
-    </div>
-    <div class="timeline reveal">
-
-      <div class="tl-item current">
-        <span class="tl-dot"></span>
-        <div class="tl-card">
-          <div class="tl-top">
-            <div class="tl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
-            <div>
-              <div class="tl-role">Flutter Developer</div>
-              <div class="tl-company"><a href="https://wady.sa/" target="_blank" rel="noopener">Wady</a></div>
-            </div>
-          </div>
-          <div class="tl-meta">
-            <span>Feb 2026 — Present</span>
-            <span>Riyadh, Saudi Arabia · Remote</span>
-          </div>
-          <ul class="tl-list">
-            <li>I build and maintain Wady's Flutter apps — new products and the listings already live — from the first estimate through App Store and Google Play.</li>
-            <li>Most products ship as two binaries, not one listing: customer plus provider or merchant. I ship both sides, including flavors and the store release for each.</li>
-            <li>Run standups and sit with clients on scope, estimates, and timelines — the conversation, not only the PR.</li>
-            <li>Marketplace and RFQ work: custom orders, merchants bidding per item, fulfillment, and returns. Feature-first Clean Architecture, BLoC, GitHub Actions for CI.</li>
-            <li>Same apps carry GCC payments (Mada, Visa, Tabby, Tamara, HyperPay), in-app wallets, deep links, and crash reporting with Crashlytics.</li>
-          </ul>
-          <div class="tag-row"><span class="tag">Flutter</span><span class="tag">BLoC</span><span class="tag">Clean Architecture</span><span class="tag">CI/CD</span><span class="tag">Store release</span></div>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <span class="tl-dot"></span>
-        <div class="tl-card">
-          <div class="tl-top">
-            <div class="tl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
-            <div>
-              <div class="tl-role">Flutter Developer</div>
-              <div class="tl-company"><a href="https://topline.com.sa/" target="_blank" rel="noopener">Topline</a></div>
-            </div>
-          </div>
-          <div class="tl-meta">
-            <span>Jul 2024 — Feb 2026</span>
-            <span>Riyadh, Saudi Arabia · Remote</span>
-          </div>
-          <ul class="tl-list">
-            <li>Technical point of contact on the main client social platform: stories, realtime chat, groups, in-app camera, subscriptions, and paid creator video sessions (Pusher, Agora).</li>
-            <li>That was the large-scope product. Other Flutter client work still ran alongside when Topline asked — I wasn't locked to one codebase.</li>
-            <li>Split work across a 3-developer Flutter team, refactored an existing codebase, and held final say on BLoC and Clean Architecture.</li>
-            <li>Sat with the client on scope, blockers, and trade-offs across features — including AR / camera-filter vendors after they cut the existing SDK over cost.</li>
-          </ul>
-          <div class="tag-row"><span class="tag">Flutter</span><span class="tag">BLoC/Cubit</span><span class="tag">Clean Architecture</span><span class="tag">Client-facing</span></div>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <span class="tl-dot"></span>
-        <div class="tl-card">
-          <div class="tl-top">
-            <div class="tl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
-            <div>
-              <div class="tl-role">Flutter Developer (Freelance)</div>
-              <div class="tl-company"><a href="https://wady.sa/" target="_blank" rel="noopener">Wady</a></div>
-            </div>
-          </div>
-          <div class="tl-meta">
-            <span>Apr 2023 — Jul 2024</span>
-            <span>Riyadh, Saudi Arabia · Remote</span>
-          </div>
-          <ul class="tl-list">
-            <li>Shipped 10+ live store listings across two-sided marketplace, on-demand, and booking products — customer, provider, and merchant apps, not a single listing per brand.</li>
-            <li>Owned the full lifecycle: estimate, development, store release, then keep the listing live.</li>
-            <li>Designed the architecture and reusable components so a new client app didn't start from a blank project every time.</li>
-            <li>Real-time features, push notifications, deep linking, and REST (Dio) against the same backends the stores already depended on.</li>
-            <li>GCC payments in production: Mada, Visa, Tabby, Tamara, HyperPay, and in-app wallets — including payouts on the provider / merchant side.</li>
-          </ul>
-          <div class="tag-row"><span class="tag">Flutter</span><span class="tag">Payments</span><span class="tag">Wallets</span><span class="tag">Deep linking</span><span class="tag">Store release</span></div>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <span class="tl-dot"></span>
-        <div class="tl-card">
-          <div class="tl-top">
-            <div class="tl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
-            <div>
-              <div class="tl-role">Software Analyst &amp; QA</div>
-              <div class="tl-company">Entlq</div>
-            </div>
-          </div>
-          <div class="tl-meta">
-            <span>Oct 2022 — Jul 2024</span>
-            <span>Riyadh, Saudi Arabia · On-site</span>
-          </div>
-          <ul class="tl-list">
-            <li>Analyzed full products from inception to delivery, and I was the tester on the same work — not a separate QA lane. Tickets from the client, then I checked the release before it went out.</li>
-            <li>That included <a href="https://jak.sa.com/" target="_blank" rel="noopener">JAK F&amp;B</a> (B2B supply for cafes and hotels, plus the <a href="https://play.google.com/store/apps/details?id=com.entlq.jackdriver" target="_blank" rel="noopener">JAK Reman</a> driver app), <a href="https://rawand.com.sa/" target="_blank" rel="noopener">Rawand</a> (office equipment and printers), <a href="https://play.google.com/store/apps/details?id=com.entlq.talaacare" target="_blank" rel="noopener">Tala Care</a> (childcare), and <a href="https://play.google.com/store/apps/details?id=com.entlq.match" target="_blank" rel="noopener">Match</a> (football pitch booking).</li>
-            <li>Broke client asks into tickets and arranged them on the Trello board for the team — order, scope, and status — so engineering and the client were looking at the same work.</li>
-          </ul>
-          <div class="tag-row"><span class="tag">Analysis</span><span class="tag">QA</span><span class="tag">Trello</span><span class="tag">Client Comms</span></div>
-        </div>
-      </div>
-
-    </div>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section id="education">
-    <div class="wrap">
-    <div class="section-title reveal">
-      <p class="section-kicker">Background</p>
-      <h2 class="display">Education</h2>
-      <div class="section-rule"></div>
-    </div>
-    <div class="edu-card reveal">
-      <div class="edu-top">
-        <div class="edu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></div>
+  <div class="sheet">
+    <section class="block" id="index">
+      <div class="index-head">
         <div>
-          <div class="edu-degree">Bachelor's, Faculty of Arts</div>
-          <div class="edu-school">Helwan University</div>
+          <p class="kicker">Portfolio index</p>
+          <h2>The film is complete.<br>The evidence follows.</h2>
+        </div>
+        <p class="status">Available for Flutter roles</p>
+      </div>
+      <a class="index-row" href="#work"><span class="num">01</span><strong>Selected work</strong><span class="aside">Products and store listings</span><span class="chev">↓</span></a>
+      <a class="index-row" href="#experience"><span class="num">02</span><strong>Experience</strong><span class="aside">Roles and responsibilities</span><span class="chev">↓</span></a>
+      <a class="index-row" href="#expertise"><span class="num">03</span><strong>Expertise</strong><span class="aside">Stack and architecture</span><span class="chev">↓</span></a>
+      <a class="index-row" href="#about"><span class="num">04</span><strong>About</strong><span class="aside">How I work</span><span class="chev">↓</span></a>
+      <a class="index-row" href="#contact"><span class="num">05</span><strong>Contact</strong><span class="aside">Start a conversation</span><span class="chev">↓</span></a>
+      <div class="stores" style="margin-top:22px">
+        <a href="https://github.com/Mohamed-Ayman-Dev" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/mohamed-ayman-devv" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="assets/Mohamed_Ayman_Flutter_Developer_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </div>
+    </section>
+
+    <section class="block" id="work">
+      <div class="section-top">
+        <div>
+          <p class="kicker">01 / Selected work</p>
+          <h2>Products with a purpose.</h2>
+          <p class="lead">Taken from the estimate through the stores. Different products — social, marketplace, booking, maps, payments — not one template.</p>
+        </div>
+        <a class="quiet" href="#more">All 11 projects →</a>
+      </div>
+
+      <article class="project">
+        <div class="shot">
+          <div class="shot-meta"><span>Project 01</span><span>Flutter · Wallet · Maps</span></div>
+          <img src="assets/vero-2-home.png" alt="Vero home screen">
+        </div>
+        <div>
+          <p class="eyebrow">Featured / Car wash</p>
+          <h3>Vero</h3>
+          <p>Book a car wash or an AC wash — or gift the visit. Packages and wallet/Mada checkout. Providers run a stepper with before and after photos. Customer and provider apps.</p>
+          <p class="when">14.2K iOS · 1,000+ Android</p>
+          <div class="tags"><span>Wallet / Mada</span><span>Gift flow</span><span>Job stepper</span><span>Maps</span></div>
+          <div class="stores">
+            <a href="https://apps.apple.com/us/app/%D9%81%D9%8A%D8%B1%D9%88-vero/id6737767544" target="_blank" rel="noopener">Customer · App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=com.wady.vero" target="_blank" rel="noopener">Customer · Google Play</a>
+            <a href="https://play.google.com/store/apps/details?id=com.wady.veroprovider" target="_blank" rel="noopener">Provider · Google Play</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="shot">
+          <div class="shot-meta"><span>Project 02</span><span>Flutter · Maps · Referrals</span></div>
+          <img src="assets/captains-2-home.png" alt="Captainz home screen">
+        </div>
+        <div>
+          <p class="eyebrow">Featured / On-demand wash</p>
+          <h3>Captainz</h3>
+          <p>Book a wash at a saved pin or buy a package. Wallet or Mada, extras, and partner vouchers. Riders take jobs on the map. Deep links carry the invite when someone shares the app.</p>
+          <p class="when">12K+ iOS · 10K+ Android · 5.0★</p>
+          <div class="tags"><span>Referrals</span><span>Deep links</span><span>Maps</span><span>Wallet</span></div>
+          <div class="stores">
+            <a href="https://apps.apple.com/us/app/%D9%83%D8%A7%D8%A8%D8%AA%D9%86%D8%B2-captainz/id6751917300" target="_blank" rel="noopener">Customer · App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=com.captainz.captainz" target="_blank" rel="noopener">Customer · Google Play</a>
+            <a href="https://apps.apple.com/us/app/captainz-rider/id6751917266" target="_blank" rel="noopener">Rider · App Store</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="shot">
+          <div class="shot-meta"><span>Project 03</span><span>Flutter · Pusher · Agora</span></div>
+          <img src="assets/timey-1-stories.jpg" alt="Timey stories feed">
+        </div>
+        <div>
+          <p class="eyebrow">Featured / Social</p>
+          <h3>Timey</h3>
+          <p>A client social platform — stories, real-time chat on Pusher, and an in-app camera, plus paid video sessions with creators and a self-serve ads flow. Technical point of contact for a 3-developer Flutter team.</p>
+          <div class="tags"><span>Pusher chat</span><span>Agora</span><span>In-app camera</span><span>Ads</span></div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="shot">
+          <div class="shot-meta"><span>Project 04</span><span>Flutter · RFQ · Pusher</span></div>
+          <img src="assets/gtech-1-home.png" alt="GTech home screen">
+        </div>
+        <div>
+          <p class="eyebrow">Featured / Marketplace</p>
+          <h3>GTech</h3>
+          <p>Owners request parts by photo and spec. Merchants bid per item — availability, VAT, delivery — then fulfill pickup or courier, with in-app chat. Customer and merchant apps.</p>
+          <div class="tags"><span>Photo RFQ</span><span>Per-item bids</span><span>Pusher</span><span>Deep links</span></div>
+          <div class="stores">
+            <a href="https://apps.apple.com/us/app/gtech-%D8%BA%D9%8A%D8%A7%D8%B1%D8%AA%D9%83/id6761782045" target="_blank" rel="noopener">Customer · App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=com.wady.ghiartech" target="_blank" rel="noopener">Customer · Google Play</a>
+            <a href="https://apps.apple.com/us/app/%D8%BA%D9%8A%D8%A7%D8%B1%D8%AA%D9%83-%D8%A3%D8%B9%D9%85%D8%A7%D9%84/id6762350414" target="_blank" rel="noopener">Merchant · App Store</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="shot">
+          <div class="shot-meta"><span>Project 05</span><span>Flutter · Tabby · Wallet</span></div>
+          <img src="assets/soapy-2-home.png" alt="Soapy home screen">
+        </div>
+        <div>
+          <p class="eyebrow">Featured / Car wash</p>
+          <h3>Soapy</h3>
+          <p>Book a wash or a named package with extras included. Pay by Tabby, Mada, or wallet. Captains run jobs from a date-filtered earnings dashboard.</p>
+          <p class="when">5.32K iOS · 500+ Android</p>
+          <div class="tags"><span>Tabby</span><span>Wallet</span><span>Packages</span><span>Earnings</span></div>
+          <div class="stores">
+            <a href="https://apps.apple.com/us/app/soapy-%D8%B3%D9%88%D8%A8%D9%8A/id6738302789" target="_blank" rel="noopener">Customer · App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=sa.soapy.app" target="_blank" rel="noopener">Customer · Google Play</a>
+            <a href="https://play.google.com/store/apps/details?id=sa.soapy.driver" target="_blank" rel="noopener">Captain · Google Play</a>
+          </div>
+        </div>
+      </article>
+
+      <div id="more">
+        <p class="kicker" style="margin-top:12px">Also shipped</p>
+        <a class="more-row" href="https://apps.apple.com/us/app/invastro/id6769418304" target="_blank" rel="noopener"><span class="num">06</span><strong>Invastro — owners and investors</strong><span>App Store</span></a>
+        <a class="more-row" href="https://apps.apple.com/us/app/magnet/id6746203011" target="_blank" rel="noopener"><span class="num">07</span><strong>Magnet — stores and custom orders</strong><span>App Store</span></a>
+        <a class="more-row" href="https://apps.apple.com/us/app/glow-up/id6615080351" target="_blank" rel="noopener"><span class="num">08</span><strong>GlowUp — salon and spa</strong><span>App Store</span></a>
+        <a class="more-row" href="https://apps.apple.com/us/app/warshastation/id6744632393" target="_blank" rel="noopener"><span class="num">09</span><strong>WarshaStation — workshops</strong><span>App Store</span></a>
+        <a class="more-row" href="https://apps.apple.com/us/app/%D9%86%D8%A8%D8%AA%D8%A9-%D8%AD%D8%B3%D8%A7%D9%86%D8%A7/id6742134403" target="_blank" rel="noopener"><span class="num">10</span><strong>Nabtat Hasana — produce store</strong><span>App Store</span></a>
+        <a class="more-row" href="https://play.google.com/store/apps/details?id=com.spicyoffers.facilitiesapp" target="_blank" rel="noopener"><span class="num">11</span><strong>Spicy Offers — venue companion</strong><span>Google Play</span></a>
+      </div>
+    </section>
+
+    <section class="block" id="experience">
+      <p class="kicker">02 / Experience</p>
+      <h2>Roles, in order.</h2>
+      <div class="role">
+        <div>
+          <p class="when">Feb 2026 — Present</p>
+          <p class="where">Riyadh · Remote</p>
+        </div>
+        <div>
+          <h3>Flutter Developer · Wady</h3>
+          <p>I build and maintain Wady’s Flutter apps — new products and the listings already live — from the first estimate through App Store and Google Play. Most products ship as two binaries: customer plus provider or merchant. Marketplace and RFQ, GCC payments, wallets, deep links, and Crashlytics. Standups and the client conversation, not only the PR.</p>
         </div>
       </div>
-      <div class="edu-meta">2018 — 2021 · Cairo, Egypt</div>
-      <p class="edu-note">Came into software through analysis and QA, then Flutter.</p>
-    </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="wrap">
-    <div class="contact-card reveal">
-      <p class="section-kicker">Contact</p>
-      <h2 class="display">Let's build something that ships.</h2>
-      <p>Open to Flutter roles — remote, hybrid, relocate, or on-site. If you need someone who can own the mobile product from a messy brief to a live listing, start here. I usually reply the same day.</p>
-      <div class="contact-links">
-        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mohamed.ayman.devv@gmail.com&amp;su=Hi%20Mohamed" target="_blank" rel="noopener">✉ mohamed.ayman.devv@gmail.com</a>
-        <a href="tel:+201146574367">☎ +20 114 657 4367</a>
-        <a href="https://www.linkedin.com/in/mohamed-ayman-devv" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/Mohamed-Ayman-Dev" target="_blank" rel="noopener">GitHub</a>
-        <a href="assets/Mohamed_Ayman_Flutter_Developer_CV.pdf" target="_blank" rel="noopener">CV ↗</a>
+      <div class="role">
+        <div>
+          <p class="when">Jul 2024 — Feb 2026</p>
+          <p class="where">Riyadh · Remote</p>
+        </div>
+        <div>
+          <h3>Flutter Developer · Topline</h3>
+          <p>Technical point of contact on the main client social platform: stories, realtime chat, groups, in-app camera, subscriptions, and paid creator video. Split work across a 3-developer Flutter team and held final say on BLoC and Clean Architecture.</p>
+        </div>
       </div>
-    </div>
-    </div>
-  </section>
+      <div class="role">
+        <div>
+          <p class="when">Apr 2023 — Jul 2024</p>
+          <p class="where">Riyadh · Remote</p>
+        </div>
+        <div>
+          <h3>Flutter Developer, freelance · Wady</h3>
+          <p>Shipped 10+ live store listings across two-sided marketplace, on-demand, and booking products. Owned the lifecycle: estimate, development, store release, then keep the listing live. GCC payments in production, including payouts on the provider side.</p>
+        </div>
+      </div>
+      <div class="role">
+        <div>
+          <p class="when">Oct 2022 — Jul 2024</p>
+          <p class="where">Riyadh · On-site</p>
+        </div>
+        <div>
+          <h3>Software Analyst &amp; QA · Entlq</h3>
+          <p>Analyzed products from inception to delivery and tested the same work. JAK F&amp;B, Rawand, Tala Care, and Match. Broke client asks into tickets on Trello so engineering and the client were looking at the same board.</p>
+        </div>
+      </div>
+    </section>
 
+    <section class="block" id="expertise">
+      <p class="kicker">03 / Expertise</p>
+      <h2>How the apps are built.</h2>
+      <div class="expertise">
+        <article>
+          <h3>Mobile</h3>
+          <ul>
+            <li>Flutter &amp; Dart</li>
+            <li>iOS and Android store release</li>
+            <li>Flavors and two-binary products</li>
+            <li>RTL, camera, maps, profiling</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Architecture</h3>
+          <ul>
+            <li>Feature-first Clean Architecture</li>
+            <li>BLoC / Cubit</li>
+            <li>Provider, Riverpod, GetIt</li>
+            <li>go_router, Dio, Crashlytics</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Product surfaces</h3>
+          <ul>
+            <li>Mada, Visa, Apple Pay, Tabby, Tamara, HyperPay</li>
+            <li>Agora, Pusher, in-app camera</li>
+            <li>Google Maps, deep links, wallets</li>
+            <li>Marketplace, booking, social</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" id="about">
+      <p class="kicker">04 / About</p>
+      <div class="about-grid">
+        <div>
+          <h2>A listing stays up because the code under it holds.</h2>
+          <p>I’m a Flutter developer based in Egypt, with 3.5+ years shipping production iOS and Android apps, and over 5 years in software. Social, marketplace, booking, and others. Experience is primarily in the Saudi market, and also the Egyptian market. 20+ live listings and 30K+ downloads.</p>
+          <p>On a client product I was the technical point of contact for a 3-developer Flutter team: estimates, how the work was split, and the technical calls. I came into software through analysis and QA at Entlq, then Flutter. Bachelor’s, Faculty of Arts, Helwan University, 2018–2021.</p>
+        </div>
+        <div class="facts">
+          <div class="fact"><span>Based in</span><strong>Cairo, Egypt</strong></div>
+          <div class="fact"><span>Focus</span><strong>Mobile engineering</strong></div>
+          <div class="fact"><span>Currently</span><strong>Flutter Developer · Wady</strong></div>
+          <div class="fact"><span>Since</span><strong>2022</strong></div>
+          <div class="fact"><span>Status</span><strong class="gold">Available — remote, relocate, hybrid, on-site</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="contact">
+      <div class="contact-intro">
+        <div>
+          <p class="kicker">05 / Contact</p>
+          <h2>Let’s build something that ships.</h2>
+          <p class="status">Available for Flutter roles</p>
+        </div>
+      </div>
+      <a class="contact-row" href="mailto:mohamed.ayman.devv@gmail.com"><span class="num">Email</span><strong>mohamed.ayman.devv@gmail.com</strong><span>↗</span></a>
+      <a class="contact-row" href="tel:+201146574367"><span class="num">Phone</span><strong>+20 114 657 4367</strong><span>↗</span></a>
+      <a class="contact-row" href="https://github.com/Mohamed-Ayman-Dev" target="_blank" rel="noopener"><span class="num">GitHub</span><strong>Mohamed-Ayman-Dev</strong><span>↗</span></a>
+      <a class="contact-row" href="https://www.linkedin.com/in/mohamed-ayman-devv" target="_blank" rel="noopener"><span class="num">LinkedIn</span><strong>mohamed-ayman-devv</strong><span>↗</span></a>
+      <a class="contact-row" href="assets/Mohamed_Ayman_Flutter_Developer_CV.pdf" target="_blank" rel="noopener"><span class="num">CV</span><strong>Flutter Developer CV</strong><span>↗</span></a>
+    </section>
+
+    <footer>
+      <span>Mohamed Ayman</span>
+      <span>Portfolio / 2026</span>
+      <span>Cairo, Egypt</span>
+      <a href="#top">Back to top ↑</a>
+    </footer>
+  </div>
 </main>
 
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Project screenshots">
-  <button class="lb-btn lb-close" id="lbClose" aria-label="Close">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
-  </button>
-  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous screenshot">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-  </button>
-  <button class="lb-btn lb-next" id="lbNext" aria-label="Next screenshot">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-  </button>
-  <div class="lb-stage">
-    <img class="lb-img" id="lbImg" alt="">
-    <div class="lb-caption" id="lbCaption"></div>
-    <div class="lb-dots" id="lbDots"></div>
-  </div>
-</div>
-
-<button class="to-top" id="toTop" aria-label="Back to top">
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-</button>
-
-<footer>Built by Mohamed Ayman · Cairo, Egypt · © 2026</footer>
-
 <script>
-  // Project screenshots live in assets/. If a file is missing, the card
-  // falls back to the colored gradient + glyph automatically (onerror).
-  const projects = [
-    { name:"Vero", roles:"Customer & Provider apps", pc1:"#1c1612", pc2:"#2a2118",
-      stat:"14.2K iOS · 1,000+ Android",
-      desc:"Book a car wash or an AC wash — or gift the visit. Packages and wallet/Mada checkout; providers run a stepper with before/after photos.",
-      tags:["Wallet / Mada","Gift flow","Job stepper","Maps"],
-      links:[
-        { group:"Customer", label:"App Store",   url:"https://apps.apple.com/us/app/%D9%81%D9%8A%D8%B1%D9%88-vero/id6737767544" },
-        { group:"Customer", label:"Google Play", url:"https://play.google.com/store/apps/details?id=com.wady.vero" },
-        { group:"Provider", label:"Google Play", url:"https://play.google.com/store/apps/details?id=com.wady.veroprovider" },
-      ],
-      shots:[
-        { src:"assets/vero-2-home.png",           label:"Home & services" },
-        { src:"assets/vero-3-packages.png",       label:"Wash packages" },
-        { src:"assets/vero-6-package-detail.png", label:"Package detail & payment" },
-        { src:"assets/vero-4-cars.png",           label:"My vehicles" },
-        { src:"assets/vero-5-coupons.png",        label:"Coupons & offers" },
-        { src:"assets/vero-1-splash.png",         label:"Splash & branding" },
-      ],
-      glyph:'<path d="M4 15c0-5 3.5-9 8-9s8 4 8 9" stroke="white" stroke-width="1.6" fill="none" stroke-linecap="round"/><circle cx="8" cy="17" r="1.5" fill="white"/><circle cx="16" cy="17" r="1.5" fill="white"/>' },
-    { name:"GTech", roles:"Customer & Merchant apps", pc1:"#1a1a1a", pc2:"#262626",
-      stat:"Quote-to-order marketplace",
-      desc:"Owners request parts by photo and spec. Merchants bid per item — availability, VAT, delivery — then fulfill pickup or courier, with in-app chat on Pusher. Marketing deep links open an order or a store, depending on the campaign.",
-      tags:["Photo RFQ","Per-item bids","Pusher","Deep links"],
-      links:[
-        { group:"Customer", label:"App Store",   url:"https://apps.apple.com/us/app/gtech-%D8%BA%D9%8A%D8%A7%D8%B1%D8%AA%D9%83/id6761782045" },
-        { group:"Customer", label:"Google Play", url:"https://play.google.com/store/apps/details?id=com.wady.ghiartech" },
-        { group:"Merchant", label:"App Store",   url:"https://apps.apple.com/us/app/%D8%BA%D9%8A%D8%A7%D8%B1%D8%AA%D9%83-%D8%A3%D8%B9%D9%85%D8%A7%D9%84/id6762350414" },
-        { group:"Merchant", label:"Google Play", url:"https://play.google.com/store/apps/details?id=com.wady.gtechseller" },
-      ],
-      shots:[
-        { src:"assets/gtech-1-home.png",    label:"Home & merchants" },
-        { src:"assets/gtech-2-orders.png",  label:"My orders" },
-        { src:"assets/gtech-3-store.png",   label:"Store profile" },
-        { src:"assets/gtech-4-quotes.png",  label:"Quote requests" },
-        { src:"assets/gtech-5-splash.png",  label:"Splash & branding" },
-      ],
-      glyph:'<path d="M14.7 6.3a3.5 3.5 0 00-4.9 4.2L4 16.3 5.7 18l5.8-5.8a3.5 3.5 0 004.2-4.9l-2 2-1.4-1.4 2-2z" fill="white"/>' },
-    { name:"Invastro", roles:"Idea Owner & Investor apps", pc1:"#0a1a3d", pc2:"#0d2a6b",
-      stat:"Owners × investors",
-      desc:"List a project or find capital — filter by city, sector, and funding, then chat in-app on Pusher without sharing a phone number.",
-      tags:["Capital matching","Pusher chat","City / sector filters","Private chat"],
-      coverPos:"center 46%",
-      links:[
-        { label:"App Store",   url:"https://apps.apple.com/us/app/invastro/id6769418304" },
-        { label:"Google Play", url:"https://play.google.com/store/apps/details?id=com.wady.invastro" },
-      ],
-      shots:[
-        { src:"assets/invastro-2-browse.png", label:"Browse & filter opportunities" },
-        { src:"assets/invastro-3-detail.png", label:"Opportunity detail & capital" },
-        { src:"assets/invastro-6-chat.png",   label:"Direct chat with owners" },
-        { src:"assets/invastro-4-create.png", label:"Create a listing" },
-        { src:"assets/invastro-5-manage.png", label:"Manage listings & views" },
-        { src:"assets/invastro-1-splash.png", label:"Splash & branding" },
-      ],
-      glyph:'<path d="M12 3l7 4v10l-7 4-7-4V7l7-4z" stroke="white" stroke-width="1.6" fill="none"/><path d="M12 8v8M8.5 10v4M15.5 10v4" stroke="white" stroke-width="1.6" stroke-linecap="round"/>' },
-    { name:"Captainz", roles:"Customer & Rider apps", pc1:"#3d2412", pc2:"#5a3419",
-      stat:"12K+ iOS · 10K+ Android · 5.0★ (164 reviews)",
-      desc:"Book a wash at a saved pin or buy a package. Pay from wallet or Mada, add extras, and redeem partner vouchers — riders take jobs on the map and climb a points board. Share the app: when enough people install through your link and complete a first order, you get a gift. Deep links carry the invite.",
-      tags:["Referrals","Deep links","Maps","Wallet"],
-      links:[
-        { group:"Customer", label:"App Store",   url:"https://apps.apple.com/us/app/%D9%83%D8%A7%D8%A8%D8%AA%D9%86%D8%B2-captainz/id6751917300" },
-        { group:"Customer", label:"Google Play", url:"https://play.google.com/store/apps/details?id=com.captainz.captainz" },
-        { group:"Rider",    label:"App Store",   url:"https://apps.apple.com/us/app/captainz-rider/id6751917266" },
-        { group:"Rider",    label:"Google Play", url:"https://play.google.com/store/apps/details?id=com.captainz.captainzprovider" },
-      ],
-      shots:[
-        { src:"assets/captains-1-splash.png",         label:"Splash & branding" },
-        { src:"assets/captains-2-home.png",           label:"Home & services" },
-        { src:"assets/captains-3-gift.png",           label:"Send a gift" },
-        { src:"assets/captains-4-packages.png",       label:"Wash packages" },
-        { src:"assets/captains-5-coupons.png",        label:"Discount codes" },
-        { src:"assets/captains-6-cars.png",           label:"My vehicles" },
-        { src:"assets/captains-7-package-detail.png", label:"Package detail & payment" },
-        { src:"assets/captains-8-branding.png",       label:"Brand intro" },
-        { src:"assets/captains-9-booking.png",        label:"Booking details" },
-        { src:"assets/captains-10-leaderboard.png",   label:"Captain leaderboard" },
-      ],
-      glyph:'<path d="M12 3l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z" fill="white"/>' },
-    { name:"Soapy", roles:"Customer & Captain apps", pc1:"#1c1612", pc2:"#2a2118",
-      stat:"5.32K iOS · 500+ Android",
-      desc:"Book a wash or a named package with extras included. Pay by Tabby, Mada, or wallet — captains run jobs from a date-filtered earnings dashboard.",
-      tags:["Tabby","Wallet","Packages","Earnings"],
-      links:[
-        { group:"Customer", label:"App Store",   url:"https://apps.apple.com/us/app/soapy-%D8%B3%D9%88%D8%A8%D9%8A/id6738302789" },
-        { group:"Customer", label:"Google Play", url:"https://play.google.com/store/apps/details?id=sa.soapy.app" },
-        { group:"Captain",  label:"Google Play", url:"https://play.google.com/store/apps/details?id=sa.soapy.driver" },
-      ],
-      shots:[
-        { src:"assets/soapy-2-home.png",              label:"Home, wallet & packages" },
-        { src:"assets/soapy-3-package-detail.png",    label:"Package + Tabby checkout" },
-        { src:"assets/soapy-4-bookings.png",          label:"Current & past bookings" },
-        { src:"assets/soapy-8-captain-dashboard.png", label:"Captain dashboard" },
-        { src:"assets/soapy-6-captain-next.png",      label:"Captain — next job" },
-        { src:"assets/soapy-7-history.png",           label:"Captain history" },
-        { src:"assets/soapy-1-splash.png",            label:"Splash & branding" },
-      ],
-      glyph:'<path d="M12 3c3 4 5 7 5 10a5 5 0 01-10 0c0-3 2-6 5-10z" fill="white"/>' },
-    { name:"Magnet", roles:"Customer & Merchant apps", pc1:"#332008", pc2:"#4a2f0c",
-      stat:"Stores + custom orders",
-      desc:"Shop companies or freelancers — size, color, and made-to-measure requests. Merchants accept or reject, handle returns, and move orders waiting → preparing → out for delivery. Scratch a card, reveal the code, type it in, and claim the win.",
-      tags:["Scratch-to-win","Variants","Returns","Fulfillment"],
-      links:[
-        { group:"Customer", label:"App Store",   url:"https://apps.apple.com/us/app/magnet/id6746203011" },
-        { group:"Customer", label:"Google Play", url:"https://play.google.com/store/apps/details?id=com.wady.magnet" },
-        { group:"Merchant", label:"App Store",   url:"https://apps.apple.com/us/app/magnet-provider/id6746348471" },
-        { group:"Merchant", label:"Google Play", url:"https://play.google.com/store/apps/details?id=com.wady.magnetprovider" },
-      ],
-      shots:[
-        { src:"assets/magnet-2-stores.png",       label:"Store directory" },
-        { src:"assets/magnet-3-store.png",        label:"Store profile" },
-        { src:"assets/magnet-5-dashboard.png",    label:"Merchant dashboard" },
-        { src:"assets/magnet-6-orders.png",       label:"Accept or reject" },
-        { src:"assets/magnet-7-order-detail.png", label:"Fulfillment stepper" },
-        { src:"assets/magnet-1-splash.png",       label:"Splash & branding" },
-        { src:"assets/magnet-4-intro.png",        label:"App intro" },
-      ],
-      glyph:'<path d="M7 4v7a5 5 0 0010 0V4" stroke="white" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M7 4h3M14 4h3" stroke="white" stroke-width="1.6" stroke-linecap="round"/>' },
-    { name:"GlowUp", roles:"Customer & Provider apps", pc1:"#33101d", pc2:"#4a1a2b",
-      stat:"Men’s & women’s salon + spa",
-      desc:"Four verticals, timed services, then a barber or the cart. Pay wallet, Mada, or cash — shops accept or reject, add extras mid-job, and withdraw.",
-      tags:["Timed booking","Wallet","Payouts","Accept / reject"],
-      links:[
-        { group:"Customer", label:"App Store",   url:"https://apps.apple.com/us/app/glow-up/id6615080351" },
-        { group:"Customer", label:"Google Play", url:"https://play.google.com/store/apps/details?id=com.wady.naeima" },
-        { group:"Provider", label:"App Store",   url:"https://apps.apple.com/us/app/glowup-provider/id6739752819" },
-        { group:"Provider", label:"Google Play", url:"https://play.google.com/store/apps/details?id=com.wady.glowupprovider" },
-      ],
-      shots:[
-        { src:"assets/glowup-1-home.png",     label:"Home & salon discovery" },
-        { src:"assets/glowup-3-salon.png",    label:"Salon profile" },
-        { src:"assets/glowup-4-services.png", label:"Hair care services" },
-        { src:"assets/glowup-2-splash.png",   label:"Splash & branding" },
-      ],
-      glyph:'<path d="M12 2v6M12 16v6M4.9 4.9l4.2 4.2M14.9 14.9l4.2 4.2M2 12h6M16 12h6M4.9 19.1l4.2-4.2M14.9 9.1l4.2-4.2" stroke="white" stroke-width="1.5" stroke-linecap="round"/>' },
-    { name:"WarshaStation", roles:"Customer & Vendor apps", pc1:"#181818", pc2:"#242424",
-      stat:"Storefront + vendor ops",
-      desc:"Each workshop is a store — services, parts, and rental. Book a slot or checkout. Vendors pass KYC, run branches and staff, redeem jobs by QR, and chat in-app on Pusher.",
-      tags:["KYC","QR redeem","Pusher chat","Vendor ops"],
-      links:[
-        { label:"App Store",   url:"https://apps.apple.com/us/app/warshastation/id6744632393" },
-        { label:"Google Play", url:"https://play.google.com/store/apps/details?id=com.warsha.warshastationnn" },
-      ],
-      shots:[
-        { src:"assets/warsha-1-home.png",       label:"Home & services" },
-        { src:"assets/warsha-2-listings.png",   label:"Workshop directory" },
-        { src:"assets/warsha-3-workshop.png",   label:"Workshop profile" },
-        { src:"assets/warsha-4-services.png",   label:"Services & pricing" },
-        { src:"assets/warsha-5-chat.png",       label:"Chat with vendor" },
-        { src:"assets/warsha-6-cars.png",       label:"Vehicle garage" },
-        { src:"assets/warsha-7-onboarding.png", label:"User vs vendor" },
-        { src:"assets/warsha-8-splash.png",     label:"Splash & branding" },
-      ],
-      glyph:'<rect x="4" y="10" width="16" height="6" rx="2" fill="white"/><circle cx="8" cy="18" r="1.6" fill="white"/><circle cx="16" cy="18" r="1.6" fill="white"/>' },
-    { name:"Timey", roles:"Client project", pc1:"#16120e", pc2:"#2e241a",
-      stat:"Social · creator booking · ads",
-      desc:"A client's social platform — stories, real-time chat on Pusher, and an in-app camera, plus paid video sessions with creators and a self-serve ads flow. Split work across a 3-developer Flutter team and held final say on technical decisions, including client trade-offs such as AR-filter vendor options when the existing SDK became a cost issue.",
-      tags:["Pusher chat","Agora","In-app camera","Ads"],
-      live:false,
-      shots:[
-        { src:"assets/timey-1-stories.jpg",  label:"Stories feed" },
-        { src:"assets/timey-2-chat.jpg",     label:"Real-time chat" },
-        { src:"assets/timey-3-camera.jpg",   label:"In-app camera & filters" },
-        { src:"assets/timey-4-profile.jpg",  label:"Creator profile & subscriptions" },
-        { src:"assets/timey-5-trending.jpg", label:"Trending feed" },
-        { src:"assets/timey-6-tips.jpg",     label:"Tips & supporters" },
-        { src:"assets/timey-7-call.jpg",     label:"Creator video session" },
-        { src:"assets/timey-8-splash.jpg",   label:"Splash & branding" },
-      ],
-      glyph:'<circle cx="12" cy="12" r="8" stroke="white" stroke-width="1.6" fill="none"/><circle cx="12" cy="12" r="2.4" fill="white"/>' },
-    { name:"Nabtat Hasana", roles:"Produce e-commerce", pc1:"#181818", pc2:"#242424",
-      stat:"Catalog store · OpenCart",
-      desc:"Plants, vegetables, fruit, and dates — categories, subcategories, cart, coupons, gift vouchers, and a wishlist, wired to an OpenCart backend. RTL storefront in SAR.",
-      tags:["OpenCart","Catalog","Coupons","RTL"],
-      links:[
-        { label:"App Store", url:"https://apps.apple.com/us/app/%D9%86%D8%A8%D8%AA%D8%A9-%D8%AD%D8%B3%D8%A7%D9%86%D8%A7/id6742134403" },
-      ],
-      shots:[
-        { src:"assets/nabtat-1-splash.jpg",     label:"Splash & branding" },
-        { src:"assets/nabtat-2-home.jpg",       label:"Home, banners & categories" },
-        { src:"assets/nabtat-3-categories.jpg", label:"Category list" },
-        { src:"assets/nabtat-4-listing.jpg",    label:"Most viewed products" },
-        { src:"assets/nabtat-5-product.jpg",    label:"Product detail" },
-        { src:"assets/nabtat-6-cart.jpg",       label:"Cart, coupon & totals" },
-      ],
-      glyph:'<path d="M12 21s-6-4.5-6-9a6 6 0 0112 0c0 4.5-6 9-6 9z" fill="white"/>' },
-    { name:"Spicy Offers", roles:"Establishment companion", pc1:"#2a1a08", pc2:"#4a2c0c",
-      stat:"QR redeem · usage analytics",
-      desc:"Companion for venues on Spicy Offers. The shop shows a QR; subscribed customers scan it from the main app to take the discount. Venues then read weekly usage and sales from this app.",
-      tags:["QR redeem","Usage analytics","OTP","RTL"],
-      links:[
-        { label:"Google Play", url:"https://play.google.com/store/apps/details?id=com.spicyoffers.facilitiesapp" },
-      ],
-      shots:[
-        { src:"assets/spicy-1-splash.jpg",  label:"Splash & branding" },
-        { src:"assets/spicy-2-otp.jpg",     label:"OTP login" },
-        { src:"assets/spicy-3-qr.jpg",      label:"Establishment QR" },
-        { src:"assets/spicy-4-reports.jpg", label:"Usage reports" },
-        { src:"assets/spicy-5-account.jpg", label:"Account" },
-      ],
-      glyph:'<path d="M12 21s-7-5.2-7-10.2a7 7 0 0114 0c0 5-7 10.2-7 10.2z" fill="white"/><circle cx="12" cy="11" r="2.2" fill="#2a1a08"/>' },
-  ];
+  const film = document.getElementById('film');
+  const video = document.getElementById('heroFilm');
+  const chapters = [...document.querySelectorAll('.chapter')];
+  const railButtons = [...document.querySelectorAll('#rail button')];
+  const railFill = document.getElementById('railFill');
+  const nav = document.getElementById('nav');
+  const stops = [0, 0.18, 0.36, 0.54, 0.72, 0.9];
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let targetTime = 0;
 
-  const grid = document.getElementById('projectGrid');
-  const INITIAL_VISIBLE = 9;
-  const arrow = d => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-    stroke-linecap="round" stroke-linejoin="round"><path d="${d === 'prev' ? 'M15 18l-6-6 6-6' : 'M9 18l6-6-6-6'}"/></svg>`;
+  function clamp(n, a, b){ return Math.max(a, Math.min(b, n)); }
 
-  function storeMarkup(links) {
-    if (!links || !links.length) return '';
-    const grouped = links.some(l => l.group);
-    const pill = l => `<a href="${l.url}" target="_blank" rel="noopener">↗ ${l.label}</a>`;
-    if (!grouped) {
-      return `<div class="proj-links">${links.map(pill).join('')}</div>`;
-    }
-    const order = [];
-    const by = {};
-    links.forEach(l => {
-      if (!by[l.group]) { by[l.group] = []; order.push(l.group); }
-      by[l.group].push(l);
-    });
-    return `<div class="proj-stores">${order.map(g => `
-      <div class="proj-store">
-        <span class="proj-store-label">${g}</span>
-        <div class="proj-links">${by[g].map(pill).join('')}</div>
-      </div>`).join('')}</div>`;
+  function progress(){
+    const travel = film.offsetHeight - window.innerHeight;
+    if (travel <= 0) return 0;
+    return clamp((window.scrollY - film.offsetTop) / travel, 0, 1);
   }
 
-  projects.forEach((p, i) => {
-    const card = document.createElement('article');
-    card.className = i >= INITIAL_VISIBLE ? 'proj-card is-extra' : 'proj-card';
+  function render(){
+    const p = reduce ? 0 : progress();
+    if (Number.isFinite(video.duration)) {
+      targetTime = Math.min(p, 0.998) * Math.max(video.duration - 0.05, 0);
+    }
 
-    const media = p.shots ? `
-      <div class="strip-wrap">
-        <div class="shot-strip">
-          ${p.shots.map((s, i) => `<img src="${s.src}" alt="${p.name} — ${s.label}" loading="lazy" data-i="${i}">`).join('')}
-        </div>
-        <button class="strip-nav strip-prev" aria-label="Previous screenshots" hidden>${arrow('prev')}</button>
-        <button class="strip-nav strip-next" aria-label="More screenshots">${arrow('next')}</button>
-      </div>
-      <div class="strip-dots">
-        ${p.shots.map((s, i) => `<button class="strip-dot${i === 0 ? ' on' : ''}" data-i="${i}"
-            aria-label="Screenshot ${i + 1}: ${s.label}"></button>`).join('')}
-      </div>`
-      : `<div class="strip-wrap" style="--pc1:${p.pc1}; --pc2:${p.pc2}">
-           ${p.live === false ? '' : '<span class="live-badge">Live</span>'}
-           <div class="shot-strip" aria-hidden="true">
-             ${[0.92, 0.5, 0.3, 0.18].map(o =>
-               `<div class="shot-ph"><svg viewBox="0 0 24 24" style="opacity:${o}">${p.glyph}</svg></div>`).join('')}
-           </div>
-         </div>
-         <div class="strip-dots" aria-hidden="true"></div>`;
+    const sticky = film.querySelector('.film-sticky').getBoundingClientRect();
+    const filmOnScreen = sticky.bottom > 40 && sticky.top < window.innerHeight - 40;
+    let active = 0;
+    stops.forEach((stop, i) => { if (p >= stop - 0.001) active = i; });
+    chapters.forEach((el, i) => {
+      const on = filmOnScreen && i === active;
+      el.classList.toggle('is-on', on);
+      el.setAttribute('aria-hidden', on ? 'false' : 'true');
+    });
+    railButtons.forEach((btn, i) => btn.classList.toggle('is-on', i === active));
+    railFill.style.width = (p * 100) + '%';
+    film.classList.toggle('is-late', active >= 2 && active < 5);
+    film.classList.toggle('is-end', active === 5);
+    nav.classList.toggle('is-solid', window.scrollY > film.offsetHeight - 80);
+  }
 
-    card.innerHTML = `
-      ${media}
-      <h3 class="proj-name">${p.name}</h3>
-      <div class="proj-roles">${p.roles}</div>
-      <p class="proj-desc">${p.stat ? `<b>${p.stat}.</b> ` : ''}${p.desc}</p>
-      <div class="proj-tags">${p.tags.map(t => `<span>${t}</span>`).join('')}</div>
-      ${p.links ? storeMarkup(p.links) : ''}
-    `;
+  function tick(){
+    if (video.readyState >= 2 && !video.seeking && Number.isFinite(video.duration)) {
+      if (Math.abs(video.currentTime - targetTime) > (1 / 24)) {
+        video.currentTime = targetTime;
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+  video.muted = true;
+  video.pause();
+  video.addEventListener('loadedmetadata', () => { video.pause(); render(); });
+  fetch(video.getAttribute('src')).then(r => r.blob()).then(blob => {
+    video.src = URL.createObjectURL(blob);
+    video.load();
+  }).catch(() => {});
+  requestAnimationFrame(tick);
 
-    if (p.shots) setupCarousel(card, p);
-    grid.appendChild(card);
+  function scrollToProgress(p){
+    const travel = film.offsetHeight - window.innerHeight;
+    window.scrollTo({ top: film.offsetTop + travel * p, behavior: reduce ? 'auto' : 'smooth' });
+  }
+
+  railButtons.forEach(btn => btn.addEventListener('click', () => scrollToProgress(Number(btn.dataset.at))));
+  window.addEventListener('scroll', render, { passive: true });
+  window.addEventListener('resize', render);
+  render();
+
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
-
-  const extraCount = projects.length - INITIAL_VISIBLE;
-  const moreWrap = document.getElementById('projMore');
-  const moreBtn = document.getElementById('projMoreBtn');
-  if (extraCount > 0 && moreWrap && moreBtn) {
-    moreBtn.textContent = extraCount === 1 ? 'Show 1 more' : `Show ${extraCount} more`;
-    moreWrap.hidden = false;
-    moreBtn.addEventListener('click', () => {
-      grid.classList.add('is-expanded');
-      moreBtn.setAttribute('aria-expanded', 'true');
-      moreWrap.hidden = true;
-      grid.querySelectorAll('.proj-card.is-extra').forEach(card => {
-        card.addEventListener('animationend', () => card.classList.add('is-revealed'), { once: true });
-      });
-    });
-  }
-
-  function setupCarousel(card, project) {
-    const strip = card.querySelector('.shot-strip');
-    const dots = [...card.querySelectorAll('.strip-dot')];
-    const prev = card.querySelector('.strip-prev');
-    const next = card.querySelector('.strip-next');
-
-    const step = () => {
-      const first = strip.querySelector('img');
-      return first ? first.getBoundingClientRect().width + 8 : strip.clientWidth * 0.6;
-    };
-
-    const maxScroll = () => strip.scrollWidth - strip.clientWidth;
-
-    // Dots span the whole scroll range, so the first and last are always reachable
-    // even when several screenshots are visible at once.
-    const sync = () => {
-      const max = maxScroll();
-      const ratio = max > 0 ? strip.scrollLeft / max : 0;
-      const i = Math.round(ratio * (dots.length - 1));
-      dots.forEach((d, n) => d.classList.toggle('on', n === i));
-      prev.hidden = strip.scrollLeft < 8;
-      next.hidden = strip.scrollLeft >= max - 8;
-    };
-
-    prev.addEventListener('click', () => { pause(); strip.scrollBy({ left: -step() * 2, behavior: 'smooth' }); });
-    next.addEventListener('click', () => { pause(); strip.scrollBy({ left: step() * 2, behavior: 'smooth' }); });
-    dots.forEach(d => d.addEventListener('click', () => {
-      pause();
-      const i = Number(d.dataset.i);
-      strip.scrollTo({ left: maxScroll() * (i / (dots.length - 1)), behavior: 'smooth' });
-    }));
-    addEventListener('resize', sync, { passive: true });
-    strip.addEventListener('scroll', () => {
-      clearTimeout(strip._t);
-      strip._t = setTimeout(sync, 60);
-    }, { passive: true });
-    strip.querySelectorAll('img').forEach(img => {
-      img.addEventListener('click', () => openLightbox(project, Number(img.dataset.i)));
-      img.addEventListener('load', sync, { once: true });
-    });
-    requestAnimationFrame(sync);
-
-    // Auto-advance: only while the card is on screen and the user isn't interacting.
-    const calm = window.matchMedia('(prefers-reduced-motion: reduce)');
-    let timer = null, visible = false;
-
-    const advance = () => {
-      if (lb.classList.contains('open') || document.hidden) return;
-      const atEnd = strip.scrollLeft >= maxScroll() - 8;
-      strip.scrollTo({ left: atEnd ? 0 : strip.scrollLeft + step(), behavior: 'smooth' });
-    };
-    const play = () => {
-      if (timer || calm.matches || !visible) return;
-      timer = setInterval(advance, 2800);
-    };
-    function pause() {
-      clearInterval(timer);
-      timer = null;
-    }
-    const resumeLater = () => { pause(); setTimeout(play, 4000); };
-
-    new IntersectionObserver(([e]) => {
-      visible = e.isIntersecting;
-      visible ? play() : pause();
-    }, { threshold: 0.35 }).observe(card);
-
-    card.addEventListener('mouseenter', pause);
-    card.addEventListener('mouseleave', play);
-    card.addEventListener('focusin', pause);
-    card.addEventListener('focusout', play);
-    strip.addEventListener('pointerdown', resumeLater);
-    document.addEventListener('visibilitychange', () => document.hidden ? pause() : play());
-    calm.addEventListener('change', () => calm.matches ? pause() : play());
-  }
-
-  // Lightbox gallery
-  const lb = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lbImg');
-  const lbCaption = document.getElementById('lbCaption');
-  const lbDots = document.getElementById('lbDots');
-  let lbShots = [], lbIndex = 0, lbTitle = '';
-
-  function renderShot(i) {
-    lbIndex = (i + lbShots.length) % lbShots.length;
-    const shot = lbShots[lbIndex];
-    lbImg.src = shot.src;
-    lbImg.alt = `${lbTitle} — ${shot.label}`;
-    lbCaption.innerHTML = `<b>${lbTitle}</b> · ${shot.label} · ${lbIndex + 1}/${lbShots.length}`;
-    lbDots.querySelectorAll('.lb-dot').forEach((d, n) => d.classList.toggle('on', n === lbIndex));
-  }
-
-  function openLightbox(project, index) {
-    lbShots = project.shots;
-    lbTitle = project.name;
-    lbDots.innerHTML = lbShots.map((s, n) =>
-      `<button class="lb-dot" aria-label="Screenshot ${n + 1}: ${s.label}"></button>`).join('');
-    lbDots.querySelectorAll('.lb-dot').forEach((d, n) => d.addEventListener('click', () => renderShot(n)));
-    renderShot(index);
-    lb.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    document.getElementById('lbClose').focus();
-  }
-
-  function closeLightbox() {
-    lb.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  document.getElementById('lbClose').addEventListener('click', closeLightbox);
-  document.getElementById('lbPrev').addEventListener('click', () => renderShot(lbIndex - 1));
-  document.getElementById('lbNext').addEventListener('click', () => renderShot(lbIndex + 1));
-  lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
-  document.addEventListener('keydown', e => {
-    if (!lb.classList.contains('open')) return;
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft') renderShot(lbIndex - 1);
-    if (e.key === 'ArrowRight') renderShot(lbIndex + 1);
-  });
-
-  // Scroll reveal
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  // Mobile menu
-  const navToggle = document.getElementById('navToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
-  navToggle.addEventListener('click', () => {
-    const open = mobileMenu.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', open);
-  });
-  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    mobileMenu.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
-  }));
-
-  // Back to top
-  const toTop = document.getElementById('toTop');
-  window.addEventListener('scroll', () => {
-    toTop.classList.toggle('show', window.scrollY > 600);
-  }, { passive: true });
-  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-  // Active nav link + sliding underline while scrolling
-  const navList = document.querySelector('.nav-links');
-  const desktopNav = [...document.querySelectorAll('.nav-links a')];
-  const spyIds = ['home','about','skills','projects','experience','education','contact'];
-
-  function moveInk(link) {
-    if (!navList || !link || window.matchMedia('(max-width:900px)').matches) {
-      if (navList) navList.style.setProperty('--ink-on', '0');
-      return;
-    }
-    const parent = navList.getBoundingClientRect();
-    const box = link.getBoundingClientRect();
-    navList.style.setProperty('--ink-x', `${box.left - parent.left}px`);
-    navList.style.setProperty('--ink-w', `${box.width}px`);
-    navList.style.setProperty('--ink-on', '1');
-  }
-
-  function setActiveNav() {
-    let current = 'home';
-    for (const id of spyIds) {
-      const el = document.getElementById(id);
-      if (el && el.getBoundingClientRect().top <= 130) current = id;
-    }
-    const href = '#' + current;
-    desktopNav.forEach(a => {
-      const on = a.getAttribute('href') === href;
-      a.classList.toggle('active', on);
-      if (on) moveInk(a);
-    });
-    document.querySelectorAll('.mobile-menu a').forEach(a => {
-      a.classList.toggle('active', a.getAttribute('href') === href && a.textContent.trim() !== 'Hire me →');
-    });
-  }
-
-  window.addEventListener('scroll', setActiveNav, { passive: true });
-  window.addEventListener('resize', setActiveNav);
-  setActiveNav();
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
 </script>
-
 </body>
 </html>
