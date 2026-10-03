@@ -740,6 +740,8 @@
   const stops = [0, 0.18, 0.36, 0.54, 0.72, 0.9];
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let targetTime = 0;
+  let seekLocked = false;
+  let seekStarted = 0;
 
   function clamp(n, a, b){ return Math.max(a, Math.min(b, n)); }
 
@@ -769,23 +771,43 @@
     film.classList.toggle('is-late', active >= 2 && active < 5);
     film.classList.toggle('is-end', active === 5);
     nav.classList.toggle('is-solid', window.scrollY > film.offsetHeight - 80);
+    if (filmOnScreen) applySeek();
   }
 
-  function tick(){
-    if (video.readyState >= 2 && !video.seeking && Number.isFinite(video.duration)) {
-      if (Math.abs(video.currentTime - targetTime) > (1 / 24)) {
-        video.currentTime = targetTime;
-      }
+  function applySeek(){
+    if (video.readyState < 2 || !Number.isFinite(video.duration)) return;
+    const drift = Math.abs(video.currentTime - targetTime);
+    if (drift < 0.05) {
+      seekLocked = false;
+      return;
     }
+    if (seekLocked && performance.now() - seekStarted < 280) return;
+    seekLocked = true;
+    seekStarted = performance.now();
+    video.pause();
+    try { video.currentTime = targetTime; }
+    catch (e) { seekLocked = false; }
+  }
+
+  video.addEventListener('seeked', () => {
+    seekLocked = false;
+    applySeek();
+  });
+  video.addEventListener('error', () => { seekLocked = false; });
+
+  function tick(){
+    applySeek();
     requestAnimationFrame(tick);
   }
+
   video.muted = true;
   video.pause();
-  video.addEventListener('loadedmetadata', () => { video.pause(); render(); });
-  fetch(video.getAttribute('src')).then(r => r.blob()).then(blob => {
+  const source = video.getAttribute('src');
+  fetch(source).then(r => r.blob()).then(blob => {
     video.src = URL.createObjectURL(blob);
     video.load();
   }).catch(() => {});
+  video.addEventListener('loadeddata', () => { video.pause(); render(); });
   requestAnimationFrame(tick);
 
   function scrollToProgress(p){
