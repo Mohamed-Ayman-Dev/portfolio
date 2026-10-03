@@ -165,6 +165,52 @@
   .aside{color:var(--muted); font-size:14px;}
   .chev{color:var(--dim); justify-self:end;}
 
+  .work-card{padding:56px 0 28px; border-top:1px solid var(--line);}
+  .work-head{display:flex; gap:18px; align-items:baseline; margin-bottom:18px;}
+  .work-head h3{margin:0; font-size:clamp(28px, 3vw, 40px); font-weight:500; letter-spacing:-0.04em;}
+  .work-roles{color:var(--muted); margin:4px 0 0; font-size:14px;}
+  .work-card .desc{margin:16px 0 0; color:#D5DEE1; font-size:16px; max-width:78ch;}
+  .work-card .desc b{color:var(--text); font-weight:500;}
+  .strip-wrap{position:relative; border-radius:16px; overflow:hidden; background:#0d1418; border:1px solid var(--line);}
+  .shot-strip{
+    display:flex; gap:10px; height:420px; padding:12px; overflow-x:auto; overscroll-behavior-x:contain;
+    scroll-snap-type:x mandatory; scroll-behavior:smooth; scrollbar-width:none;
+  }
+  .shot-strip::-webkit-scrollbar{display:none;}
+  .shot-strip img{
+    height:100%; width:auto; flex:0 0 auto; border-radius:12px; object-fit:contain; background:#11181c;
+    scroll-snap-align:start; cursor:zoom-in;
+  }
+  .strip-nav{
+    position:absolute; top:50%; transform:translateY(-50%); width:36px; height:36px; border-radius:50%;
+    background:rgba(16,25,29,0.82); border:1px solid rgba(244,243,239,0.22); color:#fff;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .strip-nav svg{width:16px; height:16px;}
+  .strip-nav[hidden]{display:none;}
+  .strip-prev{left:12px;}
+  .strip-next{right:12px;}
+  .strip-dots{display:flex; gap:6px; justify-content:center; margin:14px 0 0;}
+  .strip-dot{width:6px; height:6px; border-radius:50%; background:rgba(244,243,239,0.22); cursor:pointer;}
+  .strip-dot.on{background:var(--gold); transform:scale(1.3);}
+  .lightbox{
+    position:fixed; inset:0; z-index:80; display:none; background:rgba(8,12,14,0.92);
+    align-items:center; justify-content:center;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:min(420px, 86vw); max-height:82vh; border-radius:16px;}
+  .lb-caption{position:absolute; bottom:24px; left:0; right:0; text-align:center; color:var(--muted); font-size:14px;}
+  .lb-btn{
+    position:absolute; top:50%; transform:translateY(-50%); width:44px; height:44px; border-radius:50%;
+    border:1px solid var(--line); color:#fff; display:grid; place-items:center;
+  }
+  .lb-prev{left:18px;}
+  .lb-next{right:18px;}
+  .lb-close{top:18px; right:18px; transform:none;}
+  .role ul{margin:12px 0 0; padding-left:18px; color:#D5DEE1;}
+  .role li{margin:7px 0;}
+  .role a{border-bottom:1px solid rgba(198,165,106,0.5);}
+
   .project{
     display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:center;
     padding:78px 0; border-top:1px solid var(--line);
@@ -260,7 +306,7 @@
     .project, .about-grid, .role, .expertise, .contact-intro{grid-template-columns:1fr; display:grid;}
     .index-row{grid-template-columns:32px 1fr 16px;}
     .index-row .aside{display:none;}
-    .shot{min-height:300px;}
+    .shot-strip{height:300px;}
     .contact-row{grid-template-columns:1fr auto;}
     .contact-row .num{display:none;}
     .expertise{grid-template-columns:1fr;}
@@ -372,109 +418,12 @@
         <div>
           <p class="kicker">01 / Selected work</p>
           <h2>Products with a purpose.</h2>
-          <p class="lead">Taken from the estimate through the stores. Different products — social, marketplace, booking, maps, payments — not one template.</p>
+          <p class="lead">Eleven shipped products. Social, marketplaces, booking, maps, payments, and camera — each one with the screens that actually went to the stores.</p>
         </div>
-        <a class="quiet" href="#more">All 11 projects →</a>
       </div>
-
-      <article class="project">
-        <div class="shot">
-          <div class="shot-meta"><span>Project 01</span><span>Flutter · Wallet · Maps</span></div>
-          <img src="assets/vero-2-home.png" alt="Vero home screen">
-        </div>
-        <div>
-          <p class="eyebrow">Featured / Car wash</p>
-          <h3>Vero</h3>
-          <p>Book a car wash or an AC wash — or gift the visit. Packages and wallet/Mada checkout. Providers run a stepper with before and after photos. Customer and provider apps.</p>
-          <p class="when">14.2K iOS · 1,000+ Android</p>
-          <div class="tags"><span>Wallet / Mada</span><span>Gift flow</span><span>Job stepper</span><span>Maps</span></div>
-          <div class="stores">
-            <a href="https://apps.apple.com/us/app/%D9%81%D9%8A%D8%B1%D9%88-vero/id6737767544" target="_blank" rel="noopener">Customer · App Store</a>
-            <a href="https://play.google.com/store/apps/details?id=com.wady.vero" target="_blank" rel="noopener">Customer · Google Play</a>
-            <a href="https://play.google.com/store/apps/details?id=com.wady.veroprovider" target="_blank" rel="noopener">Provider · Google Play</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="shot">
-          <div class="shot-meta"><span>Project 02</span><span>Flutter · Maps · Referrals</span></div>
-          <img src="assets/captains-2-home.png" alt="Captainz home screen">
-        </div>
-        <div>
-          <p class="eyebrow">Featured / On-demand wash</p>
-          <h3>Captainz</h3>
-          <p>Book a wash at a saved pin or buy a package. Wallet or Mada, extras, and partner vouchers. Riders take jobs on the map. Deep links carry the invite when someone shares the app.</p>
-          <p class="when">12K+ iOS · 10K+ Android · 5.0★</p>
-          <div class="tags"><span>Referrals</span><span>Deep links</span><span>Maps</span><span>Wallet</span></div>
-          <div class="stores">
-            <a href="https://apps.apple.com/us/app/%D9%83%D8%A7%D8%A8%D8%AA%D9%86%D8%B2-captainz/id6751917300" target="_blank" rel="noopener">Customer · App Store</a>
-            <a href="https://play.google.com/store/apps/details?id=com.captainz.captainz" target="_blank" rel="noopener">Customer · Google Play</a>
-            <a href="https://apps.apple.com/us/app/captainz-rider/id6751917266" target="_blank" rel="noopener">Rider · App Store</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="shot">
-          <div class="shot-meta"><span>Project 03</span><span>Flutter · Pusher · Agora</span></div>
-          <img src="assets/timey-1-stories.jpg" alt="Timey stories feed">
-        </div>
-        <div>
-          <p class="eyebrow">Featured / Social</p>
-          <h3>Timey</h3>
-          <p>A client social platform — stories, real-time chat on Pusher, and an in-app camera, plus paid video sessions with creators and a self-serve ads flow. Technical point of contact for a 3-developer Flutter team.</p>
-          <div class="tags"><span>Pusher chat</span><span>Agora</span><span>In-app camera</span><span>Ads</span></div>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="shot">
-          <div class="shot-meta"><span>Project 04</span><span>Flutter · RFQ · Pusher</span></div>
-          <img src="assets/gtech-1-home.png" alt="GTech home screen">
-        </div>
-        <div>
-          <p class="eyebrow">Featured / Marketplace</p>
-          <h3>GTech</h3>
-          <p>Owners request parts by photo and spec. Merchants bid per item — availability, VAT, delivery — then fulfill pickup or courier, with in-app chat. Customer and merchant apps.</p>
-          <div class="tags"><span>Photo RFQ</span><span>Per-item bids</span><span>Pusher</span><span>Deep links</span></div>
-          <div class="stores">
-            <a href="https://apps.apple.com/us/app/gtech-%D8%BA%D9%8A%D8%A7%D8%B1%D8%AA%D9%83/id6761782045" target="_blank" rel="noopener">Customer · App Store</a>
-            <a href="https://play.google.com/store/apps/details?id=com.wady.ghiartech" target="_blank" rel="noopener">Customer · Google Play</a>
-            <a href="https://apps.apple.com/us/app/%D8%BA%D9%8A%D8%A7%D8%B1%D8%AA%D9%83-%D8%A3%D8%B9%D9%85%D8%A7%D9%84/id6762350414" target="_blank" rel="noopener">Merchant · App Store</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="shot">
-          <div class="shot-meta"><span>Project 05</span><span>Flutter · Tabby · Wallet</span></div>
-          <img src="assets/soapy-2-home.png" alt="Soapy home screen">
-        </div>
-        <div>
-          <p class="eyebrow">Featured / Car wash</p>
-          <h3>Soapy</h3>
-          <p>Book a wash or a named package with extras included. Pay by Tabby, Mada, or wallet. Captains run jobs from a date-filtered earnings dashboard.</p>
-          <p class="when">5.32K iOS · 500+ Android</p>
-          <div class="tags"><span>Tabby</span><span>Wallet</span><span>Packages</span><span>Earnings</span></div>
-          <div class="stores">
-            <a href="https://apps.apple.com/us/app/soapy-%D8%B3%D9%88%D8%A8%D9%8A/id6738302789" target="_blank" rel="noopener">Customer · App Store</a>
-            <a href="https://play.google.com/store/apps/details?id=sa.soapy.app" target="_blank" rel="noopener">Customer · Google Play</a>
-            <a href="https://play.google.com/store/apps/details?id=sa.soapy.driver" target="_blank" rel="noopener">Captain · Google Play</a>
-          </div>
-        </div>
-      </article>
-
-      <div id="more">
-        <p class="kicker" style="margin-top:12px">Also shipped</p>
-        <a class="more-row" href="https://apps.apple.com/us/app/invastro/id6769418304" target="_blank" rel="noopener"><span class="num">06</span><strong>Invastro — owners and investors</strong><span>App Store</span></a>
-        <a class="more-row" href="https://apps.apple.com/us/app/magnet/id6746203011" target="_blank" rel="noopener"><span class="num">07</span><strong>Magnet — stores and custom orders</strong><span>App Store</span></a>
-        <a class="more-row" href="https://apps.apple.com/us/app/glow-up/id6615080351" target="_blank" rel="noopener"><span class="num">08</span><strong>GlowUp — salon and spa</strong><span>App Store</span></a>
-        <a class="more-row" href="https://apps.apple.com/us/app/warshastation/id6744632393" target="_blank" rel="noopener"><span class="num">09</span><strong>WarshaStation — workshops</strong><span>App Store</span></a>
-        <a class="more-row" href="https://apps.apple.com/us/app/%D9%86%D8%A8%D8%AA%D8%A9-%D8%AD%D8%B3%D8%A7%D9%86%D8%A7/id6742134403" target="_blank" rel="noopener"><span class="num">10</span><strong>Nabtat Hasana — produce store</strong><span>App Store</span></a>
-        <a class="more-row" href="https://play.google.com/store/apps/details?id=com.spicyoffers.facilitiesapp" target="_blank" rel="noopener"><span class="num">11</span><strong>Spicy Offers — venue companion</strong><span>Google Play</span></a>
-      </div>
+      <div id="projectGrid"></div>
     </section>
+
 
     <section class="block" id="experience">
       <p class="kicker">02 / Experience</p>
@@ -485,8 +434,14 @@
           <p class="where">Riyadh · Remote</p>
         </div>
         <div>
-          <h3>Flutter Developer · Wady</h3>
-          <p>I build and maintain Wady’s Flutter apps — new products and the listings already live — from the first estimate through App Store and Google Play. Most products ship as two binaries: customer plus provider or merchant. Marketplace and RFQ, GCC payments, wallets, deep links, and Crashlytics. Standups and the client conversation, not only the PR.</p>
+          <h3>Flutter Developer · <a href="https://wady.sa/" target="_blank" rel="noopener">Wady</a></h3>
+          <ul>
+            <li>I build and maintain Wady’s Flutter apps — new products and the listings already live — from the first estimate through App Store and Google Play.</li>
+            <li>Most products ship as two binaries, not one listing: customer plus provider or merchant. I ship both sides, including flavors and the store release for each.</li>
+            <li>Run standups and sit with clients on scope, estimates, and timelines — the conversation, not only the PR.</li>
+            <li>Marketplace and RFQ work: custom orders, merchants bidding per item, fulfillment, and returns. Feature-first Clean Architecture, BLoC, GitHub Actions for CI.</li>
+            <li>Same apps carry GCC payments (Mada, Visa, Tabby, Tamara, HyperPay), in-app wallets, deep links, and crash reporting with Crashlytics.</li>
+          </ul>
         </div>
       </div>
       <div class="role">
@@ -495,8 +450,13 @@
           <p class="where">Riyadh · Remote</p>
         </div>
         <div>
-          <h3>Flutter Developer · Topline</h3>
-          <p>Technical point of contact on the main client social platform: stories, realtime chat, groups, in-app camera, subscriptions, and paid creator video. Split work across a 3-developer Flutter team and held final say on BLoC and Clean Architecture.</p>
+          <h3>Flutter Developer · <a href="https://topline.com.sa/" target="_blank" rel="noopener">Topline</a></h3>
+          <ul>
+            <li>Technical point of contact on the main client social platform: stories, realtime chat, groups, in-app camera, subscriptions, and paid creator video sessions (Pusher, Agora).</li>
+            <li>That was the large-scope product. Other Flutter client work still ran alongside when Topline asked — I wasn’t locked to one codebase.</li>
+            <li>Split work across a 3-developer Flutter team, refactored an existing codebase, and held final say on BLoC and Clean Architecture.</li>
+            <li>Sat with the client on scope, blockers, and trade-offs across features — including AR / camera-filter vendors after they cut the existing SDK over cost.</li>
+          </ul>
         </div>
       </div>
       <div class="role">
@@ -505,8 +465,14 @@
           <p class="where">Riyadh · Remote</p>
         </div>
         <div>
-          <h3>Flutter Developer, freelance · Wady</h3>
-          <p>Shipped 10+ live store listings across two-sided marketplace, on-demand, and booking products. Owned the lifecycle: estimate, development, store release, then keep the listing live. GCC payments in production, including payouts on the provider side.</p>
+          <h3>Flutter Developer, freelance · <a href="https://wady.sa/" target="_blank" rel="noopener">Wady</a></h3>
+          <ul>
+            <li>Shipped 10+ live store listings across two-sided marketplace, on-demand, and booking products — customer, provider, and merchant apps, not a single listing per brand.</li>
+            <li>Owned the full lifecycle: estimate, development, store release, then keep the listing live.</li>
+            <li>Designed the architecture and reusable components so a new client app didn’t start from a blank project every time.</li>
+            <li>Real-time features, push notifications, deep linking, and REST (Dio) against the same backends the stores already depended on.</li>
+            <li>GCC payments in production: Mada, Visa, Tabby, Tamara, HyperPay, and in-app wallets — including payouts on the provider / merchant side.</li>
+          </ul>
         </div>
       </div>
       <div class="role">
@@ -516,7 +482,11 @@
         </div>
         <div>
           <h3>Software Analyst &amp; QA · Entlq</h3>
-          <p>Analyzed products from inception to delivery and tested the same work. JAK F&amp;B, Rawand, Tala Care, and Match. Broke client asks into tickets on Trello so engineering and the client were looking at the same board.</p>
+          <ul>
+            <li>Analyzed full products from inception to delivery, and I was the tester on the same work — not a separate QA lane. Tickets from the client, then I checked the release before it went out.</li>
+            <li>That included <a href="https://jak.sa.com/" target="_blank" rel="noopener">JAK F&amp;B</a> (B2B supply for cafes and hotels, plus the <a href="https://play.google.com/store/apps/details?id=com.entlq.jackdriver" target="_blank" rel="noopener">JAK Reman</a> driver app), <a href="https://rawand.com.sa/" target="_blank" rel="noopener">Rawand</a> (office equipment and printers), <a href="https://play.google.com/store/apps/details?id=com.entlq.talaacare" target="_blank" rel="noopener">Tala Care</a> (childcare), and <a href="https://play.google.com/store/apps/details?id=com.entlq.match" target="_blank" rel="noopener">Match</a> (football pitch booking).</li>
+            <li>Broke client asks into tickets and arranged them on the Trello board for the team — order, scope, and status — so engineering and the client were looking at the same work.</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -552,6 +522,33 @@
             <li>Marketplace, booking, social</li>
           </ul>
         </article>
+        <article>
+          <h3>Payments</h3>
+          <ul>
+            <li>Mada · Visa · Apple Pay</li>
+            <li>Tabby · Tamara</li>
+            <li>HyperPay / PayTabs</li>
+            <li>In-app wallets and payouts</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Realtime and camera</h3>
+          <ul>
+            <li>Agora / Zego live video</li>
+            <li>Pusher and Firebase Realtime</li>
+            <li>In-app camera and AR filters</li>
+            <li>FCM and deep linking</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Maps and release</h3>
+          <ul>
+            <li>Google Maps, pins, location</li>
+            <li>QR scan and redeem</li>
+            <li>REST · Dio</li>
+            <li>Crashlytics and GitHub Actions</li>
+          </ul>
+        </article>
       </div>
     </section>
 
@@ -561,7 +558,8 @@
         <div>
           <h2>A listing stays up because the code under it holds.</h2>
           <p>I’m a Flutter developer based in Egypt, with 3.5+ years shipping production iOS and Android apps, and over 5 years in software. Social, marketplace, booking, and others. Experience is primarily in the Saudi market, and also the Egyptian market. 20+ live listings and 30K+ downloads.</p>
-          <p>On a client product I was the technical point of contact for a 3-developer Flutter team: estimates, how the work was split, and the technical calls. I came into software through analysis and QA at Entlq, then Flutter. Bachelor’s, Faculty of Arts, Helwan University, 2018–2021.</p>
+          <p>I have handled client scope and technical trade-offs, set the architecture in feature-first Clean Architecture and BLoC, and shipped under the deadline. On a client product I was the technical point of contact for a 3-developer Flutter team: estimates, how the work was split, and the technical calls.</p>
+          <p>I work in feature-first Clean Architecture and BLoC/Cubit. Payments, chat, maps, and in-app cameras are already in the apps I’ve shipped — Mada, Visa, Apple Pay, Tabby, Tamara, HyperPay — not a demo checkout. I came into software through analysis and QA at Entlq, then Flutter. Bachelor’s, Faculty of Arts, Helwan University, 2018–2021.</p>
         </div>
         <div class="facts">
           <div class="fact"><span>Based in</span><strong>Cairo, Egypt</strong></div>
@@ -597,7 +595,120 @@
   </div>
 </main>
 
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Project screenshots">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Close">✕</button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous screenshot">‹</button>
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Next screenshot">›</button>
+  <img id="lbImg" alt="">
+  <div class="lb-caption" id="lbCaption"></div>
+</div>
+
+<script src="projects.js"></script>
 <script>
+  const grid = document.getElementById('projectGrid');
+  const arrow = d => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="${d === 'prev' ? 'M15 18l-6-6 6-6' : 'M9 18l6-6-6-6'}"/></svg>`;
+  function storeMarkup(links) {
+    if (!links || !links.length) return '';
+    const grouped = links.some(l => l.group);
+    const pill = l => `<a href="${l.url}" target="_blank" rel="noopener">${l.group ? l.group + ' · ' : ''}${l.label}</a>`;
+    return `<div class="stores">${links.map(pill).join('')}</div>`;
+  }
+  projects.forEach((p, i) => {
+    const card = document.createElement('article');
+    card.className = 'work-card';
+    const n = String(i + 1).padStart(2, '0');
+    card.innerHTML = `
+      <div class="work-head">
+        <span class="num">${n}</span>
+        <div>
+          <h3>${p.name}</h3>
+          <p class="work-roles">${p.roles}</p>
+        </div>
+      </div>
+      <div class="strip-wrap">
+        <div class="shot-strip">
+          ${p.shots.map((s, si) => `<img src="${s.src}" alt="${p.name} — ${s.label}" loading="lazy" data-i="${si}">`).join('')}
+        </div>
+        <button class="strip-nav strip-prev" type="button" aria-label="Previous screenshots" hidden>${arrow('prev')}</button>
+        <button class="strip-nav strip-next" type="button" aria-label="More screenshots">${arrow('next')}</button>
+      </div>
+      <div class="strip-dots">
+        ${p.shots.map((s, si) => `<button class="strip-dot${si === 0 ? ' on' : ''}" type="button" data-i="${si}" aria-label="Screenshot ${si + 1}: ${s.label}"></button>`).join('')}
+      </div>
+      <p class="desc">${p.stat ? `<b>${p.stat}.</b> ` : ''}${p.desc}</p>
+      <div class="tags">${p.tags.map(t => `<span>${t}</span>`).join('')}</div>
+      ${storeMarkup(p.links)}
+    `;
+    setupCarousel(card, p);
+    grid.appendChild(card);
+  });
+
+  function setupCarousel(card, project) {
+    const strip = card.querySelector('.shot-strip');
+    const dots = [...card.querySelectorAll('.strip-dot')];
+    const prev = card.querySelector('.strip-prev');
+    const next = card.querySelector('.strip-next');
+    const step = () => {
+      const first = strip.querySelector('img');
+      return first ? first.getBoundingClientRect().width + 10 : strip.clientWidth * 0.6;
+    };
+    const maxScroll = () => strip.scrollWidth - strip.clientWidth;
+    const sync = () => {
+      const max = maxScroll();
+      const ratio = max > 0 ? strip.scrollLeft / max : 0;
+      const i = Math.round(ratio * (dots.length - 1));
+      dots.forEach((d, n) => d.classList.toggle('on', n === i));
+      prev.hidden = strip.scrollLeft < 8;
+      next.hidden = strip.scrollLeft >= max - 8;
+    };
+    prev.addEventListener('click', () => strip.scrollBy({ left: -step(), behavior: 'smooth' }));
+    next.addEventListener('click', () => strip.scrollBy({ left: step(), behavior: 'smooth' }));
+    dots.forEach(d => d.addEventListener('click', () => {
+      const i = Number(d.dataset.i);
+      strip.scrollTo({ left: maxScroll() * (dots.length < 2 ? 0 : i / (dots.length - 1)), behavior: 'smooth' });
+    }));
+    strip.addEventListener('scroll', () => { clearTimeout(strip._t); strip._t = setTimeout(sync, 60); }, { passive: true });
+    strip.querySelectorAll('img').forEach(img => {
+      img.addEventListener('click', () => openLightbox(project, Number(img.dataset.i)));
+      img.addEventListener('load', sync, { once: true });
+    });
+    requestAnimationFrame(sync);
+  }
+
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbCaption = document.getElementById('lbCaption');
+  let lbShots = [], lbIndex = 0, lbTitle = '';
+  function renderShot(i) {
+    lbIndex = (i + lbShots.length) % lbShots.length;
+    const shot = lbShots[lbIndex];
+    lbImg.src = shot.src;
+    lbImg.alt = `${lbTitle} — ${shot.label}`;
+    lbCaption.textContent = `${lbTitle} · ${shot.label} · ${lbIndex + 1}/${lbShots.length}`;
+  }
+  function openLightbox(project, index) {
+    lbShots = project.shots;
+    lbTitle = project.name;
+    renderShot(index);
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('lbClose').addEventListener('click', closeLightbox);
+  document.getElementById('lbPrev').addEventListener('click', () => renderShot(lbIndex - 1));
+  document.getElementById('lbNext').addEventListener('click', () => renderShot(lbIndex + 1));
+  lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') renderShot(lbIndex + 1);
+    if (e.key === 'ArrowLeft') renderShot(lbIndex - 1);
+  });
+
+
   const film = document.getElementById('film');
   const video = document.getElementById('heroFilm');
   const chapters = [...document.querySelectorAll('.chapter')];
