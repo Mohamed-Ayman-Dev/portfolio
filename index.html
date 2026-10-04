@@ -106,6 +106,21 @@
     object-fit:cover; object-position:center center;
     background:#0c1215;
   }
+  body.is-booting{overflow:hidden;}
+  .boot{
+    position:absolute; inset:0; z-index:8;
+    display:grid; place-items:center; align-content:center; gap:18px;
+    background:#10191D;
+    transition:opacity .4s ease;
+  }
+  .boot.is-done{opacity:0; visibility:hidden; pointer-events:none;}
+  .boot p{
+    margin:0; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--muted);
+  }
+  .boot-track{width:min(180px, 42vw); height:1px; background:rgba(244,243,239,0.22);}
+  .boot-fill{height:2px; width:0; margin-top:-0.5px; background:#fff;}
+  .boot-fill.is-wait{width:40%; animation:boot 1.1s ease-in-out infinite;}
+  @keyframes boot{50%{transform:translateX(140%);}}
   .shade{
     position:absolute; inset:0; pointer-events:none;
     background:
@@ -423,10 +438,11 @@
     .frame{transition:none;}
     .cue i{animation:none;}
     .chapter{transition:none;}
+    .boot{transition:none;}
   }
 </style>
 </head>
-<body>
+<body class="is-booting">
 <header class="nav" id="nav">
   <a class="wordmark" href="#top">MOHAMED AYMAN</a>
   <ul class="nav-links">
@@ -454,9 +470,13 @@
   <section class="film" id="film" aria-label="Introduction">
     <div class="film-sticky">
       <div class="hero-frame" id="heroFrame">
-        <video id="heroFilm" class="hero-video" muted playsinline preload="auto" poster="assets/film/hero-poster.jpg" src="assets/film/hero.mp4?v=9"></video>
+        <video id="heroFilm" class="hero-video" muted playsinline preload="auto" poster="assets/film/hero-poster.jpg" data-src="assets/film/hero.mp4?v=9"></video>
       </div>
       <div class="shade"></div>
+      <div class="boot" id="boot" role="status" aria-live="polite">
+        <p>Loading</p>
+        <div class="boot-track"><div class="boot-fill" id="bootFill"></div></div>
+      </div>
 
       <div class="chapter is-on" data-chapter="0">
         <p class="kicker">Flutter developer · Cairo, Egypt</p>
@@ -1162,14 +1182,51 @@ Future<void> init() async {
     requestAnimationFrame(tick);
   }
 
+  if (location.hash || window.scrollY > 8) document.body.classList.remove('is-booting');
+
   video.muted = true;
   video.pause();
-  const source = video.getAttribute('src');
-  fetch(source).then(r => r.blob()).then(blob => {
-    video.src = URL.createObjectURL(blob);
-    video.load();
-  }).catch(() => {});
-  video.addEventListener('loadeddata', () => { video.pause(); render(); });
+  const source = video.dataset.src;
+  const boot = document.getElementById('boot');
+  const bootFill = document.getElementById('bootFill');
+
+  function finishBoot(){
+    if (boot.dataset.done) return;
+    boot.dataset.done = '1';
+    bootFill.style.width = '100%';
+    boot.classList.add('is-done');
+    document.body.classList.remove('is-booting');
+    video.pause();
+    render();
+  }
+
+  async function preloadFilm(){
+    try {
+      const res = await fetch(source);
+      if (!res.ok || !res.body) throw new Error('film');
+      const total = Number(res.headers.get('content-length')) || 0;
+      const reader = res.body.getReader();
+      const chunks = [];
+      let got = 0;
+      if (!total) bootFill.classList.add('is-wait');
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        chunks.push(value);
+        got += value.byteLength;
+        if (total) bootFill.style.width = Math.min(99, (got / total) * 100) + '%';
+      }
+      video.src = URL.createObjectURL(new Blob(chunks, { type: 'video/mp4' }));
+      video.load();
+      if (video.readyState >= 2) finishBoot();
+      else video.addEventListener('loadeddata', finishBoot, { once: true });
+    } catch (e) {
+      finishBoot();
+    }
+  }
+
+  video.addEventListener('error', () => { seekLocked = false; finishBoot(); });
+  preloadFilm();
   requestAnimationFrame(tick);
 
   function scrollToProgress(p){
