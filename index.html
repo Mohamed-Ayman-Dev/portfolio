@@ -208,8 +208,18 @@
   .work-card .desc{margin:12px 0 0; color:#D5DEE1; font-size:14.5px; line-height:1.55;}
   .work-card .desc b{color:var(--text); font-weight:500;}
   .work-card .tags{margin-top:14px;}
-  .work-card .stores{margin-top:14px; gap:8px 12px;}
-  .work-card .stores a{font-size:14px;}
+  .work-card .stores{margin-top:16px; gap:8px;}
+  .work-card .stores a{
+    display:inline-flex; align-items:center; gap:6px;
+    min-height:34px; padding:0 12px; border-radius:999px;
+    border:1px solid rgba(244,243,239,0.55);
+    background:rgba(244,243,239,0.08);
+    color:#F4F3EF;
+    font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;
+  }
+  .work-card .stores a:hover{
+    border-color:#C6A56A; color:#C6A56A; background:rgba(198,165,106,0.12);
+  }
   .strip-wrap{position:relative; border-radius:16px; overflow:hidden; background:#0d1418; border:1px solid var(--line);}
   .shot-strip{
     display:flex; gap:8px; height:320px; padding:10px; overflow-x:auto; overscroll-behavior-x:contain;
@@ -287,7 +297,7 @@
   .section-top{display:flex; justify-content:space-between; align-items:flex-start; gap:32px; margin-bottom:8px;}
   .section-top > div{flex:1; min-width:0;}
   .section-top .quiet{flex:none; margin-top:42px; white-space:nowrap;}
-  #work, #about, #experience, #expertise, #contact, #index{scroll-margin-top:84px;}
+  #work, #about, #experience, #expertise, #education, #contact, #index{scroll-margin-top:84px;}
   .quiet{font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted);}
 
   .role{grid-template-columns:200px 1fr; align-items:start; padding:32px 0;}
@@ -371,8 +381,9 @@
   <a class="wordmark" href="#top">MOHAMED AYMAN</a>
   <ul class="nav-links">
     <li><a href="#work">Work</a></li>
-    <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#about">About</a></li>
   </ul>
   <div class="nav-actions">
     <a class="btn btn-line" href="assets/Mohamed_Ayman_Flutter_Developer_CV.pdf" download="Mohamed_Ayman_Flutter_Developer_CV.pdf">CV</a>
@@ -382,8 +393,9 @@
 </header>
 <nav class="mobile-menu" id="mobileMenu">
   <a href="#work">Work</a>
-  <a href="#about">About</a>
   <a href="#experience">Experience</a>
+  <a href="#expertise">Expertise</a>
+  <a href="#about">About</a>
   <a href="assets/Mohamed_Ayman_Flutter_Developer_CV.pdf" download="Mohamed_Ayman_Flutter_Developer_CV.pdf">Download CV</a>
   <a href="#contact">Contact</a>
 </nav>
@@ -408,40 +420,40 @@
         <div class="cue">Scroll to explore <i></i></div>
       </div>
       <div class="chapter" data-chapter="1">
-        <p class="kicker">02 / 06 About</p>
+        <p class="kicker">About</p>
         <h2>Shipping is the work.</h2>
         <p>3.5+ years in Flutter, over 5 years in software. 20+ production apps, primarily for the Saudi market, and also Egypt.</p>
       </div>
       <div class="chapter" data-chapter="2">
-        <p class="kicker">03 / 06 Expertise</p>
+        <p class="kicker">Expertise</p>
         <h2>The stack behind the listing.</h2>
         <p>Feature-first Clean Architecture and BLoC. Payments, maps, chat, and cameras already live in the apps — not a demo checkout.</p>
       </div>
       <div class="chapter" data-chapter="3">
-        <p class="kicker">04 / 06 Work</p>
+        <p class="kicker">Work</p>
         <h2>Two apps, not one listing.</h2>
         <p>Customer and provider. Estimate, both binaries, App Store and Google Play, then keep them live.</p>
       </div>
       <div class="chapter" data-chapter="4">
-        <p class="kicker">05 / 06 Experience</p>
+        <p class="kicker">Experience</p>
         <h2>Wady, now.</h2>
         <p>Flutter developer, remote from Cairo. Before that Topline, freelance with Wady, and analysis and QA at Entlq.</p>
       </div>
       <div class="chapter chapter-end" data-chapter="5">
-        <p class="kicker">The film / complete</p>
-        <h2>The detailed work begins here.</h2>
+        <p class="kicker">Selected work</p>
+        <h2>What shipped.</h2>
         <p class="status">Available for Flutter roles — remote, relocate, hybrid, or on-site.</p>
-        <a class="continue" href="#index">Continue to selected work <i style="display:inline-block;width:7px;height:7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg)"></i></a>
+        <a class="continue" href="#work">View projects <i style="display:inline-block;width:7px;height:7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg)"></i></a>
       </div>
 
       <div class="rail">
         <div class="rail-labels" id="rail">
-          <button type="button" data-at="0">01 Intro</button>
-          <button type="button" data-at="0.18">02 About</button>
-          <button type="button" data-at="0.36">03 Expertise</button>
-          <button type="button" data-at="0.54">04 Work</button>
-          <button type="button" data-at="0.72">05 Experience</button>
-          <button type="button" data-at="0.9">06 Final</button>
+          <button type="button" data-at="0">Intro</button>
+          <button type="button" data-at="0.18">About</button>
+          <button type="button" data-at="0.36">Expertise</button>
+          <button type="button" data-at="0.54">Work</button>
+          <button type="button" data-at="0.72">Experience</button>
+          <button type="button" data-href="#work">Projects</button>
         </div>
         <div class="rail-track"><div class="rail-fill" id="railFill"></div></div>
       </div>
@@ -452,8 +464,8 @@
     <section class="block" id="index">
       <div class="index-head">
         <div>
-          <p class="kicker">Portfolio index</p>
-          <h2>The film is complete.<br>The evidence follows.</h2>
+          <p class="kicker">Portfolio</p>
+          <h2>What shipped.</h2>
         </div>
         <p class="status">Available for Flutter roles</p>
       </div>
@@ -461,7 +473,8 @@
       <a class="index-row" href="#experience"><span class="num">02</span><strong>Experience</strong><span class="aside">Roles and responsibilities</span><span class="chev">↓</span></a>
       <a class="index-row" href="#expertise"><span class="num">03</span><strong>Expertise</strong><span class="aside">Stack and architecture</span><span class="chev">↓</span></a>
       <a class="index-row" href="#about"><span class="num">04</span><strong>About</strong><span class="aside">How I work</span><span class="chev">↓</span></a>
-      <a class="index-row" href="#contact"><span class="num">05</span><strong>Contact</strong><span class="aside">Start a conversation</span><span class="chev">↓</span></a>
+      <a class="index-row" href="#education"><span class="num">05</span><strong>Education</strong><span class="aside">Degree and courses</span><span class="chev">↓</span></a>
+      <a class="index-row" href="#contact"><span class="num">06</span><strong>Contact</strong><span class="aside">Start a conversation</span><span class="chev">↓</span></a>
       <div class="stores" style="margin-top:22px">
         <a href="https://github.com/Mohamed-Ayman-Dev" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/in/mohamed-ayman-devv" target="_blank" rel="noopener">LinkedIn</a>
@@ -615,7 +628,7 @@
           <h2>A listing stays up because the code under it holds.</h2>
           <p>I’m a Flutter developer based in Egypt, with 3.5+ years shipping production iOS and Android apps, and over 5 years in software. Social, marketplace, booking, and others. Experience is primarily in the Saudi market, and also the Egyptian market. 20+ live listings and 30K+ downloads.</p>
           <p>I have handled client scope and technical trade-offs, set the architecture in feature-first Clean Architecture and BLoC, and shipped under the deadline. On a client product I was the technical point of contact for a 3-developer Flutter team: estimates, how the work was split, and the technical calls.</p>
-          <p>I work in feature-first Clean Architecture and BLoC/Cubit. Payments, chat, maps, and in-app cameras are already in the apps I’ve shipped — Mada, Visa, Apple Pay, Tabby, Tamara, HyperPay — not a demo checkout. I came into software through analysis and QA at Entlq, then Flutter. Bachelor’s, Faculty of Arts, Helwan University, 2018–2021.</p>
+          <p>I work in feature-first Clean Architecture and BLoC/Cubit. Payments, chat, maps, and in-app cameras are already in the apps I’ve shipped — Mada, Visa, Apple Pay, Tabby, Tamara, HyperPay — not a demo checkout. I came into software through analysis and QA at Entlq, then Flutter.</p>
         </div>
         <div class="facts">
           <div class="fact"><span>Based in</span><strong>Cairo, Egypt</strong></div>
@@ -627,10 +640,35 @@
       </div>
     </section>
 
+    <section class="block" id="education">
+      <p class="kicker">05 / Education</p>
+      <h2>Degree and courses.</h2>
+      <div class="role">
+        <div>
+          <p class="when">2018 — 2021</p>
+          <p class="where">Cairo</p>
+        </div>
+        <div>
+          <h3>Bachelor’s, Faculty of Arts</h3>
+          <p class="where">Helwan University</p>
+        </div>
+      </div>
+      <div class="role">
+        <div>
+          <p class="when">Self-directed</p>
+          <p class="where">Udemy and similar</p>
+        </div>
+        <div>
+          <h3>Flutter and software engineering</h3>
+          <p>A wide range of courses on Udemy and similar platforms, in Flutter and software engineering. There are too many to name one by one.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="block" id="contact">
       <div class="contact-intro">
         <div>
-          <p class="kicker">05 / Contact</p>
+          <p class="kicker">06 / Contact</p>
           <h2>Let’s build something that ships.</h2>
           <p class="status">Available for Flutter roles</p>
           <div class="cta-pair">
@@ -672,7 +710,7 @@
   function storeMarkup(links) {
     if (!links || !links.length) return '';
     const grouped = links.some(l => l.group);
-    const pill = l => `<a href="${l.url}" target="_blank" rel="noopener">${l.group ? l.group + ' · ' : ''}${l.label}</a>`;
+    const pill = l => `<a href="${l.url}" target="_blank" rel="noopener">${l.group ? l.group + ' · ' : ''}${l.label} <span aria-hidden="true">↗</span></a>`;
     return `<div class="stores">${links.map(pill).join('')}</div>`;
   }
   projects.forEach((p, i) => {
@@ -860,7 +898,13 @@
     window.scrollTo({ top: film.offsetTop + travel * p, behavior: reduce ? 'auto' : 'smooth' });
   }
 
-  railButtons.forEach(btn => btn.addEventListener('click', () => scrollToProgress(Number(btn.dataset.at))));
+  railButtons.forEach(btn => btn.addEventListener('click', () => {
+    if (btn.dataset.href) {
+      document.querySelector(btn.dataset.href).scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+      return;
+    }
+    scrollToProgress(Number(btn.dataset.at));
+  }));
   window.addEventListener('scroll', render, { passive: true });
   window.addEventListener('resize', render);
   render();
