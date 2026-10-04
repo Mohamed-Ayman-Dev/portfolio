@@ -403,6 +403,16 @@
   }
   footer a:hover{color:#fff;}
 
+  @media (min-width: 1800px){
+    .hero-video{object-fit:contain;}
+    .chapter{width:min(560px, 32vw);}
+    .chapter h1, .chapter h2{font-size:clamp(72px, 4vw, 108px);}
+    .shade{
+      background:
+        linear-gradient(180deg, #10191D 0%, rgba(16,25,29,0.35) 6%, rgba(16,25,29,0) 12%, rgba(16,25,29,0) 90%, rgba(16,25,29,0.4) 96%, #10191D 100%),
+        linear-gradient(90deg, rgba(16,25,29,0.02) 0%, rgba(16,25,29,0.06) 46%, rgba(16,25,29,0.48) 64%, #10191D 80%, #10191D 100%);
+    }
+  }
   @media (max-width: 1100px){
     #projectGrid{grid-template-columns:repeat(2, minmax(0, 1fr));}
     .shot-strip{height:360px;}
@@ -1159,8 +1169,11 @@ Future<void> init() async {
     film.classList.toggle('is-end', active === 5);
     const ease = clamp((p - 0.06) / 0.9, 0, 1);
     const narrow = window.innerWidth < 860;
-    const x = (narrow ? -6 : -22) * (1 - ease);
-    const s = (narrow ? 0.86 : 0.78) + ((narrow ? 0.14 : 0.22) * ease);
+    const wide = window.innerWidth >= 1800;
+    const x = (narrow ? -6 : wide ? -16 : -22) * (1 - ease);
+    const s0 = narrow ? 0.86 : wide ? 0.84 : 0.78;
+    const s1 = narrow ? 1 : wide ? 1 : 1;
+    const s = s0 + ((s1 - s0) * ease);
     frame.style.transform = `translateX(${x}%) scale(${s})`;
     nav.classList.toggle('is-solid', window.scrollY > film.offsetHeight - 80);
     if (filmOnScreen) applySeek();
