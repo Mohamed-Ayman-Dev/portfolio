@@ -172,8 +172,18 @@
   }
   .continue:hover{color:var(--gold);}
 
-  .sheet{position:relative; z-index:2; background:var(--bg);}
-  .block{max-width:1120px; margin:0 auto; padding:88px 28px;}
+  .sheet{position:relative; z-index:2; background:var(--bg); overflow-x:clip;}
+  .block{
+    max-width:1120px; margin:0 auto; padding:88px 28px 48px;
+    position:relative;
+  }
+  .block::before{
+    content:"";
+    position:absolute; top:0; left:50%;
+    width:100vw; height:1px;
+    background:var(--line);
+    transform:translateX(-50%);
+  }
   .block h2{
     margin:8px 0 0; font-size:clamp(36px, 4.5vw, 56px); font-weight:500;
     letter-spacing:-0.04em; line-height:1.02;
@@ -297,7 +307,7 @@
   .section-top{display:flex; justify-content:space-between; align-items:flex-start; gap:32px; margin-bottom:8px;}
   .section-top > div{flex:1; min-width:0;}
   .section-top .quiet{flex:none; margin-top:42px; white-space:nowrap;}
-  #work, #about, #experience, #expertise, #education, #contact, #index{scroll-margin-top:84px;}
+  #work, #about, #experience, #expertise, #architecture, #education, #contact, #index{scroll-margin-top:84px;}
   .quiet{font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted);}
 
   .role{grid-template-columns:200px 1fr; align-items:start; padding:32px 0;}
@@ -321,6 +331,45 @@
   .expertise h3{margin:0 0 12px; font-size:16px; font-weight:500;}
   .expertise li{color:var(--muted); margin:7px 0; font-size:14.5px;}
   .expertise ul{margin:0; padding:0; list-style:none;}
+
+  .arch-groups{display:grid; gap:12px; margin-top:28px;}
+  .arch-group{display:flex; flex-wrap:wrap; gap:8px 10px; align-items:center;}
+  .arch-cat{
+    width:220px; flex:none;
+    font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--dim);
+  }
+  .arch-chip{
+    min-height:32px; padding:0 12px; border-radius:999px;
+    color:var(--muted); font-size:13px;
+  }
+  .arch-chip.is-on{background:#F4F3EF; color:#10191D; font-weight:600;}
+  .arch-chip:hover{color:#fff;}
+  .arch-chip.is-on:hover{color:#10191D;}
+  .arch-code{
+    margin-top:22px; border:1px solid var(--line); border-radius:16px; overflow:hidden;
+    background:#0c1215;
+  }
+  .arch-bar{
+    display:flex; justify-content:space-between; align-items:center; gap:16px;
+    padding:12px 16px; border-bottom:1px solid var(--line);
+    color:var(--muted); font-size:13px;
+  }
+  .arch-bar button{
+    flex:none; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted);
+  }
+  .arch-bar button:hover{color:#fff;}
+  .arch-pre{
+    margin:0; padding:16px 18px 22px; overflow:auto;
+    font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size:13px; line-height:1.7; color:#D5DEE1;
+  }
+  .arch-line{display:block; white-space:pre;}
+  .arch-no{display:inline-block; width:2.4em; color:var(--dim); user-select:none;}
+  .arch-note{color:#7f93a0;}
+  .arch-notes{display:grid; grid-template-columns:repeat(3, 1fr); gap:14px; margin-top:18px;}
+  .arch-notes article{border:1px solid var(--line); border-radius:16px; padding:18px 18px 20px;}
+  .arch-notes h3{margin:0 0 8px; font-size:15px; font-weight:500;}
+  .arch-notes p{margin:0; color:var(--muted); font-size:14.5px; line-height:1.5;}
 
   .more-row{grid-template-columns:42px 1fr auto; }
   .more-row a:hover{color:var(--gold);}
@@ -358,7 +407,8 @@
     }
     .rail-labels{font-size:0;}
     .rail-labels button.is-on{font-size:10px;}
-    .project, .about-grid, .role, .expertise, .contact-intro{grid-template-columns:1fr; display:grid;}
+    .project, .about-grid, .role, .expertise, .arch-notes, .contact-intro{grid-template-columns:1fr; display:grid;}
+    .arch-cat{width:100%;}
     .index-row{grid-template-columns:32px 1fr 16px;}
     .index-row .aside{display:none;}
     #projectGrid{grid-template-columns:1fr;}
@@ -472,9 +522,10 @@
       <a class="index-row" href="#work"><span class="num">01</span><strong>Selected work</strong><span class="aside">Products and store listings</span><span class="chev">↓</span></a>
       <a class="index-row" href="#experience"><span class="num">02</span><strong>Experience</strong><span class="aside">Roles and responsibilities</span><span class="chev">↓</span></a>
       <a class="index-row" href="#expertise"><span class="num">03</span><strong>Expertise</strong><span class="aside">Stack and architecture</span><span class="chev">↓</span></a>
-      <a class="index-row" href="#about"><span class="num">04</span><strong>About</strong><span class="aside">How I work</span><span class="chev">↓</span></a>
-      <a class="index-row" href="#education"><span class="num">05</span><strong>Education</strong><span class="aside">Degree and courses</span><span class="chev">↓</span></a>
-      <a class="index-row" href="#contact"><span class="num">06</span><strong>Contact</strong><span class="aside">Start a conversation</span><span class="chev">↓</span></a>
+      <a class="index-row" href="#architecture"><span class="num">04</span><strong>Architecture</strong><span class="aside">How the code is structured</span><span class="chev">↓</span></a>
+      <a class="index-row" href="#about"><span class="num">05</span><strong>About</strong><span class="aside">How I work</span><span class="chev">↓</span></a>
+      <a class="index-row" href="#education"><span class="num">06</span><strong>Education</strong><span class="aside">Degree and courses</span><span class="chev">↓</span></a>
+      <a class="index-row" href="#contact"><span class="num">07</span><strong>Contact</strong><span class="aside">Start a conversation</span><span class="chev">↓</span></a>
       <div class="stores" style="margin-top:22px">
         <a href="https://github.com/Mohamed-Ayman-Dev" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/in/mohamed-ayman-devv" target="_blank" rel="noopener">LinkedIn</a>
@@ -621,8 +672,48 @@
       </div>
     </section>
 
+    <section class="block" id="architecture">
+      <p class="kicker">04 / Architecture</p>
+      <h2>Architecture and code.</h2>
+      <p class="lead">Feature-first Clean Architecture with BLoC/Cubit — how the production apps are structured.</p>
+      <div class="arch-groups" id="archGroups"></div>
+      <div class="arch-code">
+        <div class="arch-bar">
+          <span id="archFile">lib/ (project root)</span>
+          <button type="button" id="archCopy">Copy</button>
+        </div>
+        <pre class="arch-pre" id="archPre"></pre>
+      </div>
+      <div class="arch-notes">
+        <article>
+          <h3>Separation of concerns</h3>
+          <p>UI knows nothing about APIs. It only reacts to typed state objects — swapping the data source requires zero UI changes.</p>
+        </article>
+        <article>
+          <h3>Crash-proof networking</h3>
+          <p>ApiResult&lt;T&gt; makes failure a first-class citizen. The compiler forces both success and error paths to be handled — no silent swallows.</p>
+        </article>
+        <article>
+          <h3>Modular dependency injection</h3>
+          <p>Each feature owns its DI registration. Adding a new feature is one class plus one line in the global locator. Nothing else changes.</p>
+        </article>
+        <article>
+          <h3>Testable by design</h3>
+          <p>Constructor injection across all layers means any dependency can be swapped for a mock. No framework needed for unit tests.</p>
+        </article>
+        <article>
+          <h3>Single source of truth</h3>
+          <p>Endpoints, error messages, and design constants live in one place each. A backend URL change is a one-line edit.</p>
+        </article>
+        <article>
+          <h3>Scalability first</h3>
+          <p>Feature-first folders mean adding orders or notifications never touches existing features.</p>
+        </article>
+      </div>
+    </section>
+
     <section class="block" id="about">
-      <p class="kicker">04 / About</p>
+      <p class="kicker">05 / About</p>
       <div class="about-grid">
         <div>
           <h2>A listing stays up because the code under it holds.</h2>
@@ -641,7 +732,7 @@
     </section>
 
     <section class="block" id="education">
-      <p class="kicker">05 / Education</p>
+      <p class="kicker">06 / Education</p>
       <h2>Degree and courses.</h2>
       <div class="role">
         <div>
@@ -668,7 +759,7 @@
     <section class="block" id="contact">
       <div class="contact-intro">
         <div>
-          <p class="kicker">06 / Contact</p>
+          <p class="kicker">07 / Contact</p>
           <h2>Let’s build something that ships.</h2>
           <p class="status">Available for Flutter roles</p>
           <div class="cta-pair">
@@ -808,6 +899,194 @@
     if (e.key === 'ArrowLeft') renderShot(lbIndex - 1);
   });
 
+
+  const archSnippets = [
+    { id:"folder", cat:"Clean architecture", label:"Folder structure", file:"lib/ (project root)", code:
+`lib/
+ ├── core/                  # Global Logic
+ │   ├── network/           # ApiClient, ApiResult, Interceptors
+ │   ├── di/                # Dependency Injection (GetIt)
+ │   └── error/             # ApiException, Failure types
+ │
+ └── features/              # Business Features (isolated modules)
+     └── addresses/         # Address Feature
+         ├── data/
+         │   ├── datasources/   # RemoteDataSource (API calls)
+         │   ├── models/        # AddressModel (Equatable)
+         │   └── repositories/  # AddressRepositoryImpl
+         ├── domain/
+         │   ├── repositories/  # AddressRepository (abstract)
+         │   └── usecases/      # GetAddressesUseCase, DeleteAddressUseCase
+         └── presentation/
+             ├── cubit/         # AddressCubit, AddressState
+             ├── screens/       # AddressScreen, AddAddressScreen
+             └── widgets/       # AddressCard, AddressListTile` },
+    { id:"domain", cat:"Clean architecture", label:"Domain layer", file:"lib/features/addresses/domain/repositories/address_repository.dart", code:
+`abstract class AddressRepository {
+  Future<ApiResult<List<Address>>> getAddresses();
+  Future<ApiResult<Address>> addAddress(AddressRequest request);
+  Future<ApiResult<void>> deleteAddress(int id);
+}` },
+    { id:"data", cat:"Clean architecture", label:"Data layer", file:"lib/features/addresses/data/repositories/address_repository_impl.dart", code:
+`class AddressRepositoryImpl implements AddressRepository {
+  final AddressRemoteDataSource _remoteDataSource;
+
+  AddressRepositoryImpl(this._remoteDataSource);
+
+  @override
+  Future<ApiResult<List<Address>>> getAddresses() async {
+    try {
+      final response = await _remoteDataSource.getAddresses();
+      return ApiResult.success(response);
+    } catch (e) {
+      return ApiResult.failure(ApiException.fromDioException(e));
+    }
+  }
+}` },
+    { id:"cubit", cat:"Clean architecture", label:"Cubit", file:"lib/features/addresses/presentation/cubit/address_cubit.dart", code:
+`class AddressCubit extends BaseCubit<AddressState> {
+  final AddressRepository _repository;
+
+  AddressCubit(this._repository) : super(AddressInitial());
+
+  Future<void> fetchAddresses() async {
+    emit(AddressLoading());
+    final result = await _repository.getAddresses();
+
+    result.whenOrThrowError(
+      success: (data) => emit(AddressLoaded(data)),
+      error: (error) => emit(AddressError(error.message)),
+    );
+  }
+}` },
+    { id:"state", cat:"Clean architecture", label:"State classes", file:"lib/features/addresses/presentation/cubit/address_state.dart", code:
+`abstract class AddressState {}
+
+class AddressInitial extends AddressState {}
+class AddressLoading extends AddressState {}
+class AddressLoaded extends AddressState {
+  final List<Address> addresses;
+  AddressLoaded(this.addresses);
+}
+class AddressError extends AddressState {
+  final String message;
+  AddressError(this.message);
+}` },
+    { id:"result", cat:"Resilient networking", label:"ApiResult<T>", file:"lib/core/network/api_result.dart", code:
+`sealed class ApiResult<T> {
+  const ApiResult();
+
+  factory ApiResult.success(T data) = Success<T>;
+  factory ApiResult.failure(ApiException exception) = Failure<T>;
+
+  R when<R>({
+    required R Function(T data) success,
+    required R Function(ApiException exception) failure,
+  }) {
+    if (this is Success<T>) {
+      return success((this as Success<T>).data);
+    } else if (this is Failure<T>) {
+      return failure((this as Failure<T>).exception);
+    }
+    throw Exception('Unhandled ApiResult type');
+  }
+}` },
+    { id:"exception", cat:"Resilient networking", label:"ApiException", file:"lib/core/network/api_exception.dart", code:
+`class ApiException implements Exception {
+  final String message;
+  final int? statusCode;
+
+  ApiException(this.message, [this.statusCode]);
+
+  factory ApiException.fromDioException(DioException error) {
+    return ApiException(error.message ?? 'Unknown error');
+  }
+}` },
+    { id:"usage", cat:"Resilient networking", label:"Graceful usage", file:"lib/features/addresses/presentation/pages/address_page.dart", code:
+`BlocBuilder<AddressCubit, AddressState>(
+  builder: (context, state) {
+    if (state is AddressLoading) {
+      return const CircularProgressIndicator();
+    } else if (state is AddressError) {
+      return Text(state.message);
+    } else if (state is AddressLoaded) {
+      return AddressList(addresses: state.addresses);
+    }
+    return const SizedBox();
+  },
+)` },
+    { id:"feature-di", cat:"Dependency injection", label:"Feature DI", file:"lib/features/addresses/di/address_di.dart", code:
+`class AddressDI {
+  static void init() {
+    sl.registerLazySingleton<AddressRemoteDataSource>(
+      () => AddressRemoteDataSourceImpl(sl()),
+    );
+    sl.registerLazySingleton<AddressRepository>(
+      () => AddressRepositoryImpl(sl()),
+    );
+    sl.registerFactory(() => AddressCubit(sl()));
+  }
+}` },
+    { id:"locator", cat:"Dependency injection", label:"Global locator", file:"lib/core/di/injection_container.dart", code:
+`final sl = GetIt.instance;
+
+Future<void> init() async {
+  sl.registerLazySingleton<Dio>(() => DioFactory().create());
+  AddressDI.init();
+  AuthDI.init();
+  ProfileDI.init();
+}` },
+    { id:"main", cat:"Dependency injection", label:"Locator service", file:"lib/main.dart", code:
+`void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await di.init();
+  runApp(const MyApp());
+}` }
+  ];
+
+  const archGroups = document.getElementById('archGroups');
+  const archPre = document.getElementById('archPre');
+  const archFile = document.getElementById('archFile');
+  const archCopy = document.getElementById('archCopy');
+  let archCurrent = archSnippets[0];
+
+  function archEscape(text){
+    return text.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  }
+
+  function showArch(id){
+    archCurrent = archSnippets.find(s => s.id === id) || archSnippets[0];
+    archFile.textContent = archCurrent.file;
+    const lines = archCurrent.code.replace(/\n$/, '').split('\n');
+    archPre.innerHTML = lines.map((line, i) => {
+      const n = String(i + 1).padStart(2, ' ');
+      const body = archEscape(line).replace(/(#.*)$/, '<span class="arch-note">$1</span>');
+      return `<span class="arch-line"><span class="arch-no">${n}</span>${body}</span>`;
+    }).join('');
+    archGroups.querySelectorAll('button').forEach(btn => {
+      btn.classList.toggle('is-on', btn.dataset.id === archCurrent.id);
+    });
+  }
+
+  const archCats = [...new Set(archSnippets.map(s => s.cat))];
+  archGroups.innerHTML = archCats.map(cat => `
+    <div class="arch-group">
+      <span class="arch-cat">${cat}</span>
+      ${archSnippets.filter(s => s.cat === cat).map(s => `<button type="button" class="arch-chip" data-id="${s.id}">${s.label}</button>`).join('')}
+    </div>
+  `).join('');
+  archGroups.addEventListener('click', e => {
+    const btn = e.target.closest('button');
+    if (btn) showArch(btn.dataset.id);
+  });
+  archCopy.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(archCurrent.code);
+      archCopy.textContent = 'Copied';
+      setTimeout(() => { archCopy.textContent = 'Copy'; }, 1400);
+    } catch (e) {}
+  });
+  showArch('folder');
 
   const film = document.getElementById('film');
   const frame = document.getElementById('heroFrame');
