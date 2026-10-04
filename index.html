@@ -96,6 +96,11 @@
   .film-sticky{
     position:sticky; top:0; height:100vh; overflow:hidden; background:#0c1215;
   }
+  .hero-frame{
+    position:absolute; inset:0;
+    transform:translateX(-22%) scale(0.78);
+    transform-origin:center center;
+  }
   .hero-video{
     position:absolute; inset:0; width:100%; height:100%;
     object-fit:cover; object-position:center center;
@@ -103,11 +108,13 @@
   }
   .shade{
     position:absolute; inset:0; pointer-events:none;
-    background:linear-gradient(90deg, rgba(16,25,29,0.05) 0%, rgba(16,25,29,0.02) 42%, rgba(16,25,29,0.55) 68%, rgba(16,25,29,0.88) 100%);
-    transition:background .4s ease;
+    background:
+      linear-gradient(180deg, #10191D 0%, rgba(16,25,29,0.45) 8%, rgba(16,25,29,0) 16%, rgba(16,25,29,0) 84%, rgba(16,25,29,0.5) 93%, #10191D 100%),
+      linear-gradient(90deg, rgba(16,25,29,0.04) 0%, rgba(16,25,29,0.08) 40%, rgba(16,25,29,0.55) 58%, #10191D 74%, #10191D 100%);
+    transition:background 1.1s ease;
   }
   .film.is-late .shade, .film.is-end .shade{
-    background:linear-gradient(180deg, rgba(16,25,29,0.08) 28%, rgba(16,25,29,0.55) 68%, rgba(16,25,29,0.9) 100%);
+    background:linear-gradient(180deg, rgba(16,25,29,0.28) 20%, rgba(16,25,29,0.62) 68%, rgba(16,25,29,0.9) 100%);
   }
   .film.is-late .chapter:not(.chapter-end){
     right:auto; left:6vw; top:auto; bottom:18vh; width:min(520px, 48vw); transform:none;
@@ -125,16 +132,14 @@
     transform:translateY(12px);
   }
   .chapter-end.is-on{transform:none;}
-  .kicker{
-    margin:0 0 14px;
-    font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--muted);
-  }
   .chapter h1, .chapter h2{
     margin:0 0 16px;
     font-weight:500; letter-spacing:-0.045em; line-height:0.96;
     font-size:clamp(44px, 5.6vw, 84px);
   }
   .chapter p{margin:0; max-width:38ch; color:#D5DEE1; font-size:16.5px; line-height:1.55;}
+  .hero-actions{display:flex; flex-wrap:wrap; gap:10px; margin-top:22px;}
+  .chapter .hero-actions .btn-line{background:rgba(16,25,29,0.35);}
   .cue{
     margin-top:28px; display:inline-flex; align-items:center; gap:8px;
     font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--text);
@@ -144,13 +149,6 @@
     transform:rotate(45deg); animation:bob 1.4s ease-in-out infinite;
   }
   @keyframes bob{50%{transform:translateY(4px) rotate(45deg);}}
-  .status{color:var(--gold); font-size:14px; margin-top:18px;}
-  .continue{
-    margin-top:22px; display:inline-flex; align-items:center; gap:8px;
-    font-size:11px; letter-spacing:0.16em; text-transform:uppercase;
-  }
-  .continue:hover{color:var(--gold);}
-
   .rail{
     position:absolute; left:28px; right:28px; bottom:16px; z-index:5;
   }
@@ -163,6 +161,16 @@
   .rail-labels button:hover{color:#fff;}
   .rail-track{height:1px; background:rgba(244,243,239,0.22); position:relative;}
   .rail-fill{position:absolute; left:0; top:-0.5px; height:2px; width:0; background:#fff;}
+  .kicker{
+    margin:0 0 14px;
+    font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--muted);
+  }
+  .status{color:var(--gold); font-size:14px; margin-top:18px;}
+  .continue{
+    margin-top:22px; display:inline-flex; align-items:center; gap:8px;
+    font-size:11px; letter-spacing:0.16em; text-transform:uppercase;
+  }
+  .continue:hover{color:var(--gold);}
 
   .sheet{position:relative; z-index:2; background:var(--bg);}
   .block{max-width:1120px; margin:0 auto; padding:88px 28px;}
@@ -336,7 +344,7 @@
     .chapter.is-on, .chapter-end.is-on{transform:none;}
     .chapter h1, .chapter h2{font-size:40px;}
     .shade, .film.is-end .shade{
-      background:linear-gradient(180deg, rgba(16,25,29,0.15) 0%, rgba(16,25,29,0.2) 40%, rgba(16,25,29,0.92) 100%);
+      background:linear-gradient(180deg, rgba(16,25,29,0.2) 0%, rgba(16,25,29,0.28) 40%, rgba(16,25,29,0.88) 100%);
     }
     .rail-labels{font-size:0;}
     .rail-labels button.is-on{font-size:10px;}
@@ -383,14 +391,20 @@
 <main id="top">
   <section class="film" id="film" aria-label="Introduction">
     <div class="film-sticky">
-      <video id="heroFilm" class="hero-video" muted playsinline preload="auto" poster="assets/film/hero-poster.jpg" src="assets/film/hero.mp4?v=4"></video>
+      <div class="hero-frame" id="heroFrame">
+        <video id="heroFilm" class="hero-video" muted playsinline preload="auto" poster="assets/film/hero-poster.jpg" src="assets/film/hero.mp4?v=8"></video>
+      </div>
       <div class="shade"></div>
 
       <div class="chapter is-on" data-chapter="0">
-        <p class="kicker">01 / 06 Intro</p>
-        <p class="kicker" style="margin-top:-8px">Flutter developer / Cairo, Egypt</p>
+        <p class="kicker">Flutter developer · Cairo, Egypt</p>
         <h1>Mohamed Ayman</h1>
-        <p>From a messy brief to a live store listing.</p>
+        <p>3.5+ years in Flutter. 20+ production apps, primarily for the Saudi market, and also Egypt. From estimate to a live store listing.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="assets/Mohamed_Ayman_Flutter_Developer_CV.pdf" download="Mohamed_Ayman_Flutter_Developer_CV.pdf">Download CV</a>
+          <a class="btn btn-line" href="#work">Projects</a>
+          <a class="btn btn-line" href="#contact">Contact</a>
+        </div>
         <div class="cue">Scroll to explore <i></i></div>
       </div>
       <div class="chapter" data-chapter="1">
@@ -758,6 +772,7 @@
 
 
   const film = document.getElementById('film');
+  const frame = document.getElementById('heroFrame');
   const video = document.getElementById('heroFilm');
   const chapters = [...document.querySelectorAll('.chapter')];
   const railButtons = [...document.querySelectorAll('#rail button')];
@@ -794,16 +809,20 @@
     });
     railButtons.forEach((btn, i) => btn.classList.toggle('is-on', i === active));
     railFill.style.width = (p * 100) + '%';
-    film.classList.toggle('is-late', active >= 2 && active < 5);
+    film.classList.toggle('is-late', active >= 4 && active < 5);
     film.classList.toggle('is-end', active === 5);
+    const ease = clamp((p - 0.06) / 0.9, 0, 1);
+    const narrow = window.innerWidth < 860;
+    const x = (narrow ? -6 : -22) * (1 - ease);
+    const s = (narrow ? 0.86 : 0.78) + ((narrow ? 0.14 : 0.22) * ease);
+    frame.style.transform = `translateX(${x}%) scale(${s})`;
     nav.classList.toggle('is-solid', window.scrollY > film.offsetHeight - 80);
     if (filmOnScreen) applySeek();
   }
 
   function applySeek(){
     if (video.readyState < 2 || !Number.isFinite(video.duration)) return;
-    const drift = Math.abs(video.currentTime - targetTime);
-    if (drift < 0.05) {
+    if (Math.abs(video.currentTime - targetTime) < 0.05) {
       seekLocked = false;
       return;
     }
