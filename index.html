@@ -107,6 +107,8 @@
     background:#0c1215;
   }
   body.is-booting{overflow:hidden;}
+  html.hero-cached body.is-booting{overflow:visible;}
+  html.hero-cached .boot{display:none;}
   .boot{
     position:absolute; inset:0; z-index:8;
     display:grid; place-items:center; align-content:center; gap:18px;
@@ -441,6 +443,13 @@
     .boot{transition:none;}
   }
 </style>
+<script>
+  try {
+    if (localStorage.getItem('hero-film') === 'assets/film/hero.mp4?v=9') {
+      document.documentElement.classList.add('hero-cached');
+    }
+  } catch (e) {}
+</script>
 </head>
 <body class="is-booting">
 <header class="nav" id="nav">
@@ -1201,9 +1210,29 @@ Future<void> init() async {
   }
 
   async function preloadFilm(){
+    const remember = () => { try { localStorage.setItem('hero-film', source); } catch (e) {} };
+    const playBlob = blob => {
+      video.src = URL.createObjectURL(blob);
+      video.load();
+      if (video.readyState >= 2) finishBoot();
+      else video.addEventListener('loadeddata', finishBoot, { once: true });
+    };
     try {
+      if ('caches' in window) {
+        const cache = await caches.open('hero-film');
+        const hit = await cache.match(source);
+        if (hit) {
+          remember();
+          playBlob(await hit.blob());
+          return;
+        }
+      }
+      document.documentElement.classList.remove('hero-cached');
+      if (!location.hash && window.scrollY <= 8) document.body.classList.add('is-booting');
       const res = await fetch(source);
       if (!res.ok || !res.body) throw new Error('film');
+      const cache = 'caches' in window ? await caches.open('hero-film') : null;
+      const saved = cache ? cache.put(source, res.clone()) : Promise.resolve();
       const total = Number(res.headers.get('content-length')) || 0;
       const reader = res.body.getReader();
       const chunks = [];
@@ -1216,11 +1245,11 @@ Future<void> init() async {
         got += value.byteLength;
         if (total) bootFill.style.width = Math.min(99, (got / total) * 100) + '%';
       }
-      video.src = URL.createObjectURL(new Blob(chunks, { type: 'video/mp4' }));
-      video.load();
-      if (video.readyState >= 2) finishBoot();
-      else video.addEventListener('loadeddata', finishBoot, { once: true });
+      await saved;
+      remember();
+      playBlob(new Blob(chunks, { type: 'video/mp4' }));
     } catch (e) {
+      try { localStorage.removeItem('hero-film'); } catch (err) {}
       finishBoot();
     }
   }
